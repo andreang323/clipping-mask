@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bf408r8h3qgu1"]
+
+[ext_resource type="Script" uid="uid://c4rlta41xuid" path="res://canvas/canvas.gd" id="1_fg4ge"]
+
+[node name="Canvas" type="Sprite2D" unique_id=805457798]
+script = ExtResource("1_fg4ge")
+image_size = Vector2i(512, 512)
+brush_size = Vector2i(16, 16)
+metadata/_custom_type_script = "uid://c4rlta41xuid"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1722493701]
