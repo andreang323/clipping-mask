@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bi4nq78eojhid"]
+
+[ext_resource type="Texture2D" uid="uid://c7g5ge25kq16q" path="res://icon.svg" id="1_715ba"]
+[ext_resource type="Texture2D" uid="uid://bcmkahusfwrcl" path="res://testing_levels/Mask.png" id="2_ucfg8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ucfg8"]
+blend_mode = 3
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ucfg8"]
+viewport_path = NodePath("SubViewportContainer/SubViewport")
+
+[node name="Testing" type="Node2D" unique_id=2070549298]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=540936817]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1937399502]
+transparent_bg = true
+size = Vector2i(4096, 2048)
+
+[node name="Mask" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=1840253310]
+position = Vector2(868, 399)
+texture = ExtResource("2_ucfg8")
+
+[node name="Mask2" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=1345227005]
+position = Vector2(655, 661)
+texture = ExtResource("2_ucfg8")
+
+[node name="Mask3" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=528014182]
+position = Vector2(465, 363)
+texture = ExtResource("2_ucfg8")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=1743259013]
+
+[node name="Icon2" type="Sprite2D" parent="CanvasGroup" unique_id=706831915]
+position = Vector2(945, 380)
+texture = ExtResource("1_715ba")
+
+[node name="Icon" type="Sprite2D" parent="CanvasGroup" unique_id=679632040]
+position = Vector2(504, 358)
+texture = ExtResource("1_715ba")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup" unique_id=670472637]
+material = SubResource("CanvasItemMaterial_ucfg8")
+position = Vector2(2048, 1024)
+texture = SubResource("ViewportTexture_ucfg8")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=746737397]
+position = Vector2(964, 541)
