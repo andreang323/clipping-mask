@@ -1,0 +1,133 @@
+[gd_scene load_steps=2 format=3 uid="uid://vv1kw068vm8x"]
+
+[ext_resource type="Script" uid="uid://bnb5fv2dmph8t" path="res://scripts/settings_screen.gd" id="1_onfb1"]
+
+[node name="SettingsScreen" type="CanvasLayer"]
+script = ExtResource("1_onfb1")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SettingsMenu" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -842.0
+offset_top = -427.0
+offset_right = 842.0
+offset_bottom = 427.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="SettingsMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "SETTINGS"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Options" type="VBoxContainer" parent="SettingsMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="MasterLabel" type="Label" parent="SettingsMenu/HBoxContainer/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "MASTER"
+
+[node name="MasterSlider" type="HSlider" parent="SettingsMenu/HBoxContainer/Options"]
+layout_mode = 2
+focus_mode = 0
+max_value = 1.0
+step = 0.01
+
+[node name="MusicLabel" type="Label" parent="SettingsMenu/HBoxContainer/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "MUSIC"
+
+[node name="MusicSlider" type="HSlider" parent="SettingsMenu/HBoxContainer/Options"]
+layout_mode = 2
+focus_mode = 0
+max_value = 1.0
+step = 0.01
+
+[node name="SFXLabel" type="Label" parent="SettingsMenu/HBoxContainer/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="SettingsMenu/HBoxContainer/Options"]
+layout_mode = 2
+focus_mode = 0
+max_value = 1.0
+step = 0.01
+
+[node name="CheckButton" type="CheckButton" parent="SettingsMenu/HBoxContainer/Options"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 60
+text = "FULLSCREEN"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SettingsMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/HBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Credits" type="RichTextLabel" parent="SettingsMenu/HBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 70
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/bold_font_size = 70
+text = "Credits:
+"
+
+[node name="Buttons" type="HBoxContainer" parent="SettingsMenu"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Back" type="Button" parent="SettingsMenu/Buttons"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 75
+text = "BACK"
+
+[node name="HSeparator" type="Control" parent="SettingsMenu/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuitButton" type="Button" parent="SettingsMenu/Buttons"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 75
+text = "QUIT"
+
+[connection signal="value_changed" from="SettingsMenu/HBoxContainer/Options/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="SettingsMenu/HBoxContainer/Options/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SettingsMenu/HBoxContainer/Options/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="toggled" from="SettingsMenu/HBoxContainer/Options/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="SettingsMenu/Buttons/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="SettingsMenu/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
