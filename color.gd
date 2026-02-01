@@ -28,11 +28,11 @@ func _process(_delta: float) -> void:
 func _on_mouse_entered() -> void:
 	mouse_in = true
 
-func _on_mouse_exited() -> void:
-	if drag:
-		drag_ended.emit()
-		drag = false
-	mouse_in = false
+# func _on_mouse_exited() -> void:
+# 	if drag:
+# 		drag_ended.emit()
+# 		drag = false
+# 	mouse_in = false
 
 func disable():
 	$Particles.modulate = particle_color
