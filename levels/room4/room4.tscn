@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bx0iu4jk8v6ay" path="res://assets/audio/marimba.mp3" id="3_18ht7"]
 [ext_resource type="Texture2D" uid="uid://bvlf4ngwb6k4" path="res://levels/room4/sprites/bedroom_only_bird.png" id="3_l6ufo"]
 [ext_resource type="Texture2D" uid="uid://dfbi4tlhakd3b" path="res://levels/room4/sprites/bird_flying.png" id="4_432ht"]
+[ext_resource type="Texture2D" uid="uid://b1uonoyg8x3cw" path="res://levels/room4/sprites/bedroom_no_bird_yes_key.png" id="4_jpdwt"]
 [ext_resource type="AudioStream" uid="uid://c76xlqer1awxm" path="res://assets/audio/wingbeat.mp3" id="5_l6ufo"]
 [ext_resource type="Texture2D" uid="uid://dm068nx3oba53" path="res://levels/room4/sprites/bedroom_no_bird.png" id="6_c7ee3"]
 [ext_resource type="Texture2D" uid="uid://cpoo4pul7ya2w" path="res://levels/room4/sprites/cover.png" id="7_cu2xb"]
@@ -13,9 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://b4m10tdd7shdy" path="res://levels/room4/sprites/bedroom_blue.png" id="10_8rpem"]
 [ext_resource type="Texture2D" uid="uid://wrtwj8myqwf0" path="res://levels/room4/sprites/bedroom_red.png" id="11_qd2jd"]
 [ext_resource type="Texture2D" uid="uid://cruoeupnu507m" path="res://levels/room4/sprites/bedroom_white.png" id="12_iw6is"]
-[ext_resource type="Texture2D" uid="uid://big3ja5q8qt6d" path="res://levels/room4/sprites/bedroom_yellow.png" id="13_elipq"]
+[ext_resource type="Texture2D" uid="uid://b31nlx4ys3ak0" path="res://levels/room4/sprites/bedroom_yellow.png" id="13_elipq"]
 [ext_resource type="PackedScene" uid="uid://c0gjg6cvalg8o" path="res://objects/receiver.tscn" id="14_udx8y"]
 [ext_resource type="Texture2D" uid="uid://dv424rtxt6nbc" path="res://levels/room4/sprites/key_sprite.png" id="15_432ht"]
+[ext_resource type="Texture2D" uid="uid://dbuqao3ejhxdp" path="res://levels/room4/sprites/bedroom_yellow_key.png" id="15_c7ee3"]
 [ext_resource type="AudioStream" uid="uid://budwtsdf3seei" path="res://assets/audio/cat_thud.mp3" id="17_c7ee3"]
 [ext_resource type="AudioStream" uid="uid://dgrjam6hgbwrt" path="res://assets/audio/ding.mp3" id="18_cu2xb"]
 
@@ -369,14 +371,16 @@ _data = {
 &"get_key": SubResource("Animation_432ht")
 }
 
-[node name="Room4" type="Node2D" unique_id=1049781343 node_paths=PackedStringArray("colors", "key_color", "background", "sound")]
+[node name="Room4" type="Node2D" unique_id=1049781343 node_paths=PackedStringArray("colors", "key_color", "bird_receivers", "background", "sound")]
 z_index = 900
 script = ExtResource("1_o4caw")
 free_bird_texture = ExtResource("6_c7ee3")
 free_key_texture = ExtResource("3_l6ufo")
-colors = [NodePath("Color"), NodePath("Color2"), NodePath("Color3"), NodePath("Color4")]
-key_color = NodePath("Color4")
+free_bird_yes_key_texture = ExtResource("4_jpdwt")
+colors = [NodePath("Color"), NodePath("Color2"), NodePath("Color3"), NodePath("Color4"), NodePath("ColorKey")]
+key_color = NodePath("ColorKey")
 cat_cover_texture = ExtResource("8_olj11")
+bird_receivers = [NodePath("Receiver3"), NodePath("Receiver4"), NodePath("Receiver2"), NodePath("Receiver")]
 background = NodePath("Sprite2D")
 sound = NodePath("Marimba")
 metadata/_custom_type_script = "uid://524yva3w0xf3"
@@ -412,6 +416,7 @@ bus = &"SFX"
 libraries/ = SubResource("AnimationLibrary_uckq8")
 
 [node name="CatAnim" type="Node2D" parent="." unique_id=1475889221]
+visible = false
 z_index = 4096
 position = Vector2(-247, -160)
 
@@ -431,7 +436,6 @@ libraries/ = SubResource("AnimationLibrary_p3u2w")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1808669986]
 
 [node name="Color" parent="." unique_id=1426723397 groups=["Colors"] instance=ExtResource("9_jpdwt")]
-visible = false
 position = Vector2(152, -81)
 particle_color = Color(0.21176471, 0.4745098, 0.8235294, 1)
 id = 4
@@ -440,7 +444,6 @@ id = 4
 texture = ExtResource("10_8rpem")
 
 [node name="Color2" parent="." unique_id=1394284978 groups=["Colors"] instance=ExtResource("9_jpdwt")]
-visible = false
 position = Vector2(189, -254)
 particle_color = Color(0.9254902, 0.19607843, 0.14509805, 1)
 id = 1
@@ -449,7 +452,6 @@ id = 1
 texture = ExtResource("11_qd2jd")
 
 [node name="Color3" parent="." unique_id=1081469217 groups=["Colors"] instance=ExtResource("9_jpdwt")]
-visible = false
 position = Vector2(163, -297)
 particle_color = Color(1, 1, 1, 1)
 id = 15
@@ -461,13 +463,21 @@ position = Vector2(17, -13)
 texture = ExtResource("12_iw6is")
 
 [node name="Color4" parent="." unique_id=1100091402 groups=["Colors"] instance=ExtResource("9_jpdwt")]
-visible = false
 position = Vector2(183, -124)
 particle_color = Color(0.98039216, 0.8745098, 0.2901961, 1)
 id = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Color4" unique_id=435537388]
 texture = ExtResource("13_elipq")
+
+[node name="ColorKey" parent="." unique_id=2035628437 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("9_jpdwt")]
+position = Vector2(247, -85)
+particle_color = Color(0.98039216, 0.8745098, 0.2901961, 1)
+id = 22
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorKey" unique_id=1225625629]
+texture = ExtResource("15_c7ee3")
 
 [node name="Receiver" parent="." unique_id=666436468 groups=["Receivers"] instance=ExtResource("14_udx8y")]
 position = Vector2(-215, -207)
@@ -489,6 +499,11 @@ position = Vector2(-241, -250)
 answers = Array[int]([15])
 snap_enabled = false
 
+[node name="ReceiverKey" parent="." unique_id=1800255523 groups=["Receivers"] instance=ExtResource("14_udx8y")]
+position = Vector2(-178, -37)
+answers = Array[int]([22])
+snap_enabled = false
+
 [node name="Key" type="Sprite2D" parent="." unique_id=718507953]
 visible = false
 z_index = 1
@@ -507,6 +522,6 @@ stream = ExtResource("18_cu2xb")
 bus = &"SFX"
 
 [connection signal="room_complete" from="." to="." method="_on_room_complete"]
-[connection signal="color_received" from="Receiver3" to="." method="_on_receiver_3_color_received"]
+[connection signal="color_received" from="ReceiverKey" to="." method="_on_receiver_key_color_received"]
 
 [editable path="Color3"]

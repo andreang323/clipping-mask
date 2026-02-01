@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b31nlx4ys3ak0"
-path="res://.godot/imported/bedroom_yellow.png-869b67b7783719cc8d77f82a85e13496.ctex"
+uid="uid://dbuqao3ejhxdp"
+path="res://.godot/imported/bedroom_yellow_key.png-abeb4c7a69522e7a19e2b5c3f6b2aa7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/room4/sprites/bedroom_yellow.png"
-dest_files=["res://.godot/imported/bedroom_yellow.png-869b67b7783719cc8d77f82a85e13496.ctex"]
+source_file="res://levels/room4/sprites/bedroom_yellow_key.png"
+dest_files=["res://.godot/imported/bedroom_yellow_key.png-abeb4c7a69522e7a19e2b5c3f6b2aa7c.ctex"]
 
 [params]
 
