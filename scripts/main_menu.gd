@@ -11,12 +11,18 @@ func _ready() -> void:
 ## Starts the game.
 func _on_start_button_pressed() -> void:
 	$Button3.play()
-	$MinimalistVibes.stop()
-	$SleepingIn.play()
+	
 	$SettingsScreen.game_ready()
 	var game_start = game_file.instantiate()
 	add_child(game_start)
+	$CanvasLayer/AnimationPlayer.play("fade")
+	await $CanvasLayer/AnimationPlayer.animation_finished
+	$MinimalistVibes.stop()
+	$SleepingIn.play()
 	$TitleScreen.hide()
+	$CanvasLayer/AnimationPlayer.play_backwards("fade")
+	await $CanvasLayer/AnimationPlayer.animation_finished
+	$CanvasLayer.hide()
 
 ## Shows the settings menu.
 func _on_settings_button_pressed() -> void:
