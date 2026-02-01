@@ -10,6 +10,8 @@ var x_limit = 5
 ## Position of first room.
 var base_location = Vector2(540, 960)
 
+@export var final_room: Resource
+
 var current_room_index: int = 0
 
 func _ready() -> void:
@@ -103,4 +105,20 @@ func go_right():
 	current_room_index += 1
 
 func load_final_level() -> void:
-	print("load final level")
+	var all_rooms: Array[Node] = $Rooms.get_children()
+
+	var tween = get_tree().create_tween()
+	tween.tween_property(all_rooms[current_room_index], "modulate", Color(0,0,0), 0.5)
+
+	await tween.finished
+
+	var saved_position = all_rooms[current_room_index].position
+	all_rooms[current_room_index].queue_free()
+
+	var new_room = final_room.instantiate()
+	add_child(new_room)
+	new_room.position = saved_position
+
+	new_room.modulate = Color(0, 0, 0)
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(new_room, "modulate", Color(1, 1, 1), 0.5)

@@ -9,3 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+# GlobalFlags.key_obtained.emit()
+# GlobalFlags.room4_data.key_obtained = true
