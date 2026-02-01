@@ -19,10 +19,12 @@
 [ext_resource type="Texture2D" uid="uid://daqp6qj5wtgmg" path="res://levels/room2/sprites/small_shapes/006.png" id="16_6cuco"]
 [ext_resource type="Texture2D" uid="uid://dfnaf48pjmmun" path="res://levels/room2/sprites/small_shapes/007.png" id="17_b76fy"]
 [ext_resource type="Texture2D" uid="uid://c0gmku2f4sqnk" path="res://levels/room2/sprites/small_shapes/0010.png" id="18_w5lh4"]
+[ext_resource type="AudioStream" uid="uid://bx0iu4jk8v6ay" path="res://assets/audio/marimba.mp3" id="20_pnbfm"]
 
-[node name="Room2" type="Node2D" unique_id=2029889854 node_paths=PackedStringArray("background")]
+[node name="Room2" type="Node2D" unique_id=2029889854 node_paths=PackedStringArray("background", "sound")]
 script = ExtResource("1_34xmr")
 background = NodePath("Background")
+sound = NodePath("Marimba")
 metadata/_custom_type_script = "uid://524yva3w0xf3"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=939994957]
@@ -301,6 +303,10 @@ snap_enabled = false
 position = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=611279501]
+
+[node name="Marimba" type="AudioStreamPlayer" parent="." unique_id=2037246357]
+stream = ExtResource("20_pnbfm")
+bus = &"SFX"
 
 [editable path="Potion9"]
 [editable path="Potion10"]

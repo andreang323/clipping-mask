@@ -13,10 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://d21hx5wovfxga" path="res://levels/room5/sprites/007.png" id="11_podyk"]
 [ext_resource type="Texture2D" uid="uid://dqf1kgneimlpp" path="res://levels/room5/sprites/008.png" id="12_p1nat"]
 [ext_resource type="PackedScene" uid="uid://c0gjg6cvalg8o" path="res://objects/receiver.tscn" id="13_nrcuk"]
+[ext_resource type="AudioStream" uid="uid://bx0iu4jk8v6ay" path="res://assets/audio/marimba.mp3" id="14_n33bk"]
 
-[node name="Room" type="Node2D" unique_id=1473296067 node_paths=PackedStringArray("background")]
+[node name="Room" type="Node2D" unique_id=1473296067 node_paths=PackedStringArray("background", "sound")]
 script = ExtResource("1_2wmum")
 background = NodePath("Background")
+sound = NodePath("Marimba")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1999614817]
 z_index = 1
@@ -181,6 +183,10 @@ answers = Array[int]([13])
 snap_enabled = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=97747582]
+
+[node name="Marimba" type="AudioStreamPlayer" parent="." unique_id=2051036475]
+stream = ExtResource("14_n33bk")
+bus = &"SFX"
 
 [editable path="Color"]
 [editable path="Color2"]

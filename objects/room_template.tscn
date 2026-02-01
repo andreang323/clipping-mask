@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://waramubiekh0"]
+[gd_scene format=3 uid="uid://waramubiekh0"]
 
 [ext_resource type="Script" uid="uid://524yva3w0xf3" path="res://scripts/room_template.gd" id="1_r0bxd"]
 [ext_resource type="Texture2D" uid="uid://c7g5ge25kq16q" path="res://icon.svg" id="2_5vdq0"]
 
-[node name="Room" type="Node2D"]
+[node name="Room" type="Node2D" unique_id=161525558]
 script = ExtResource("1_r0bxd")
 
-[node name="Placeholder" type="Sprite2D" parent="."]
+[node name="Placeholder" type="Sprite2D" parent="." unique_id=1400129527]
 scale = Vector2(8.031, 8.031)
 texture = ExtResource("2_5vdq0")

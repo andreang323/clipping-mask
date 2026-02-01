@@ -6,15 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://jmiepmoej4kg" path="res://objects/color_drag.tscn" id="4_a4g6i"]
 [ext_resource type="Texture2D" uid="uid://cnfsugdrjlcic" path="res://levels/room1/sprites/moon.png" id="5_66tix"]
 [ext_resource type="Texture2D" uid="uid://rgye6rmkf5g5" path="res://levels/room1/sprites/cloud.png" id="6_8cty6"]
+[ext_resource type="AudioStream" uid="uid://bx0iu4jk8v6ay" path="res://assets/audio/marimba.mp3" id="7_8cty6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4g6k6"]
 size = Vector2(175.25, 188)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_66tix"]
 
-[node name="Room1" type="Node2D" unique_id=1074964609 node_paths=PackedStringArray("background")]
+[node name="Room1" type="Node2D" unique_id=1074964609 node_paths=PackedStringArray("background", "sound")]
 script = ExtResource("1_w7pcf")
 background = NodePath("Background")
+sound = NodePath("Marimba")
 metadata/_custom_type_script = "uid://524yva3w0xf3"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1059298015]
@@ -65,6 +67,10 @@ sprite = NodePath("Cloud")
 
 [node name="Cloud" type="Sprite2D" parent="GemCloud" unique_id=430897550]
 texture = ExtResource("6_8cty6")
+
+[node name="Marimba" type="AudioStreamPlayer" parent="." unique_id=1433165376]
+stream = ExtResource("7_8cty6")
+bus = &"SFX"
 
 [connection signal="color_received" from="LightChecker" to="." method="_on_light_checker_color_received"]
 [connection signal="color_received" from="GemChecker" to="." method="_on_gem_checker_color_received"]

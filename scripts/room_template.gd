@@ -4,6 +4,7 @@ class_name Room
 
 ## Background image of room
 @export var background: Sprite2D
+@export var sound : AudioStreamPlayer
 ## Size of the room. Needed for autopopulation if used.
 var room_size : Vector2 = Vector2(1080, 1080)
 ## Emitted when room complete.
@@ -27,4 +28,6 @@ func color_received(_id):
 		if color_drag is ColorDrag:
 			color_drag.disable()
 	complete = true
+	if sound:
+		sound.play()
 	print("room complete")
