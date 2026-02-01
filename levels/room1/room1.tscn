@@ -10,7 +10,6 @@
 size = Vector2(175.25, 188)
 
 [node name="Room1" type="Node2D" unique_id=1074964609]
-position = Vector2(965, 539)
 script = ExtResource("1_w7pcf")
 metadata/_custom_type_script = "uid://524yva3w0xf3"
 

@@ -6,6 +6,18 @@ class_name Room
 ## Emitted when room complete.
 signal roomComplete()
 
+var complete = false
+
 ## Called when a room is completed.
 func roomFinished():
 	roomComplete.emit()
+
+func color_received():
+	for receiver in get_tree().get_nodes_in_group("Receivers"):
+		if !receiver.correct:
+			return
+	for color_drag in get_tree().get_nodes_in_group("Colors"):
+		if color_drag is ColorDrag:
+			color_drag.disable()
+	complete = true
+	print("room complete")
