@@ -30,4 +30,5 @@ func color_received(_id):
 	complete = true
 	if sound:
 		sound.play()
-	print("room complete")
+	room_finished()
+	# print("room complete")

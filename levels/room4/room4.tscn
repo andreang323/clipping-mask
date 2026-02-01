@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dud5seoxkuo02"]
 
-[ext_resource type="Script" path="res://levels/room4/room_4.gd" id="1_o4caw"]
+[ext_resource type="Script" uid="uid://b2l1vlteo8sto" path="res://levels/room4/room_4.gd" id="1_o4caw"]
 [ext_resource type="Texture2D" uid="uid://jsl8jaaicq0x" path="res://levels/room4/sprites/bedroom.png" id="2_blpyf"]
 [ext_resource type="AudioStream" uid="uid://bx0iu4jk8v6ay" path="res://assets/audio/marimba.mp3" id="3_18ht7"]
+[ext_resource type="Texture2D" uid="uid://bvlf4ngwb6k4" path="res://levels/room4/sprites/bedroom_only_bird.png" id="3_l6ufo"]
 [ext_resource type="Texture2D" uid="uid://dfbi4tlhakd3b" path="res://levels/room4/sprites/bird_flying.png" id="4_432ht"]
 [ext_resource type="AudioStream" uid="uid://c76xlqer1awxm" path="res://assets/audio/wingbeat.mp3" id="5_l6ufo"]
 [ext_resource type="Texture2D" uid="uid://dm068nx3oba53" path="res://levels/room4/sprites/bedroom_no_bird.png" id="6_c7ee3"]
@@ -14,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cruoeupnu507m" path="res://levels/room4/sprites/bedroom_white.png" id="12_iw6is"]
 [ext_resource type="Texture2D" uid="uid://big3ja5q8qt6d" path="res://levels/room4/sprites/bedroom_yellow.png" id="13_elipq"]
 [ext_resource type="PackedScene" uid="uid://c0gjg6cvalg8o" path="res://objects/receiver.tscn" id="14_udx8y"]
+[ext_resource type="Texture2D" uid="uid://dv424rtxt6nbc" path="res://levels/room4/sprites/key_sprite.png" id="15_432ht"]
 
 [sub_resource type="Animation" id="Animation_5ptq8"]
 length = 0.001
@@ -255,9 +257,98 @@ _data = {
 &"cat_fall": SubResource("Animation_82svq")
 }
 
-[node name="Room4" type="Node2D" unique_id=1049781343 node_paths=PackedStringArray("background", "sound")]
+[sub_resource type="Animation" id="Animation_l6ufo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-183, -39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_432ht"]
+resource_name = "get_key"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-183, -39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6ufo"]
+_data = {
+&"RESET": SubResource("Animation_l6ufo"),
+&"get_key": SubResource("Animation_432ht")
+}
+
+[node name="Room4" type="Node2D" unique_id=1049781343 node_paths=PackedStringArray("colors", "key_color", "background", "sound")]
 z_index = 900
 script = ExtResource("1_o4caw")
+free_bird_texture = ExtResource("6_c7ee3")
+free_key_texture = ExtResource("3_l6ufo")
+colors = [NodePath("Color"), NodePath("Color2"), NodePath("Color3"), NodePath("Color4")]
+key_color = NodePath("Color4")
 background = NodePath("Sprite2D")
 sound = NodePath("Marimba")
 metadata/_custom_type_script = "uid://524yva3w0xf3"
@@ -365,5 +456,17 @@ snap_enabled = false
 position = Vector2(-241, -250)
 answers = Array[int]([15])
 snap_enabled = false
+
+[node name="Key" type="Sprite2D" parent="." unique_id=718507953]
+visible = false
+z_index = 1
+position = Vector2(-183, -39)
+texture = ExtResource("15_432ht")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Key" unique_id=1752687920]
+libraries/ = SubResource("AnimationLibrary_l6ufo")
+
+[connection signal="room_complete" from="." to="." method="_on_room_complete"]
+[connection signal="color_received" from="Receiver3" to="." method="_on_receiver_3_color_received"]
 
 [editable path="Color3"]
