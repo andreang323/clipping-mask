@@ -17,7 +17,7 @@ void fragment() {
             vec2 offset = vec2(float(x), float(y));
             float dist = length(offset);
 
-            if (dist > max_distance || !(UV.x < max_distance || UV.y < max_distance || UV.x > TEXTURE_PIXEL_SIZE.x - max_distance || UV.y > TEXTURE_PIXEL_SIZE.y - max_distance) || COLOR.a == 0.0) continue;
+            if (dist > max_distance || COLOR.a == 0.0) continue;
 
             if (texture(TEXTURE, UV + offset * TEXTURE_PIXEL_SIZE).a > 0.0) {
                 closest_outline_distance = min(closest_outline_distance, dist);
@@ -31,6 +31,10 @@ void fragment() {
     if (is_edge) {
         float alpha = 1.0 - smoothstep(outline_thickness - anti_alias_amount, outline_thickness + anti_alias_amount, closest_outline_distance);
         COLOR = vec4(outline_color.rgb, alpha);
+    } else if (UV.x < max_distance * TEXTURE_PIXEL_SIZE.x || UV.y < max_distance * TEXTURE_PIXEL_SIZE.y || UV.x > 1.0 - max_distance * TEXTURE_PIXEL_SIZE.x || UV.y > 1.0 - max_distance * TEXTURE_PIXEL_SIZE.y) {
+        if (COLOR.a > 0.0) {
+            COLOR = vec4(outline_color.rgb, 1.0);
+        }
     } else {
         COLOR = vec4(COLOR.rgb, 0.0);
     }
