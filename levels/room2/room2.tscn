@@ -20,9 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://dfnaf48pjmmun" path="res://levels/room2/sprites/small_shapes/007.png" id="17_b76fy"]
 [ext_resource type="Texture2D" uid="uid://c0gmku2f4sqnk" path="res://levels/room2/sprites/small_shapes/0010.png" id="18_w5lh4"]
 [ext_resource type="AudioStream" uid="uid://bx0iu4jk8v6ay" path="res://assets/audio/marimba.mp3" id="20_pnbfm"]
-[ext_resource type="Texture2D" uid="uid://qu0gkkp8y5bn" path="res://levels/cat/000.png" id="21_54nya"]
-[ext_resource type="Texture2D" uid="uid://c88h4duqwtnn5" path="res://levels/cat/001.png" id="22_6cuco"]
-[ext_resource type="Texture2D" uid="uid://b1sxq8ixk8g0m" path="res://levels/cat/002.png" id="23_b76fy"]
+[ext_resource type="Texture2D" uid="uid://qu0gkkp8y5bn" path="res://levels/cat/cat000.png" id="21_54nya"]
+[ext_resource type="Texture2D" uid="uid://c88h4duqwtnn5" path="res://levels/cat/cat001.png" id="22_6cuco"]
+[ext_resource type="Texture2D" uid="uid://b1sxq8ixk8g0m" path="res://levels/cat/cat002.png" id="23_b76fy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w5lh4"]
 animations = [{
