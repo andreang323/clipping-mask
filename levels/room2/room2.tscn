@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://hgjouu5xi2jr"]
+
+[ext_resource type="Script" uid="uid://524yva3w0xf3" path="res://scripts/room_template.gd" id="1_seud8"]
+[ext_resource type="Texture2D" uid="uid://dx8mtukalqti2" path="res://levels/room2/sprites/background.png" id="2_wqp6q"]
+[ext_resource type="Script" uid="uid://dure3in8hxjjf" path="res://scripts/color.gd" id="3_rpy1s"]
+[ext_resource type="Texture2D" uid="uid://htj01e8glk3y" path="res://levels/room2/sprites/000.png" id="4_m0jnv"]
+[ext_resource type="Texture2D" uid="uid://c5c5eefes8x3x" path="res://levels/room2/sprites/001.png" id="5_rumsy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0jnv"]
+size = Vector2(33.828125, 66)
+
+[node name="Room2" type="Node2D" unique_id=2029889854 node_paths=PackedStringArray("background")]
+script = ExtResource("1_seud8")
+background = NodePath("Background")
+metadata/_custom_type_script = "uid://524yva3w0xf3"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=939994957]
+z_index = 1
+texture = ExtResource("2_wqp6q")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1233941193]
+offset_left = -977.0
+offset_top = -540.0
+offset_right = 1007.0
+offset_bottom = 494.0
+mouse_filter = 2
+color = Color(0.17254902, 0.16470589, 0.14509805, 1)
+
+[node name="Potion1" type="Area2D" parent="." unique_id=2139051581 node_paths=PackedStringArray("sprite")]
+position = Vector2(885, 342)
+script = ExtResource("3_rpy1s")
+sprite = NodePath("Sprite2D")
+metadata/_custom_type_script = "uid://dure3in8hxjjf"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Potion1" unique_id=471851416]
+shape = SubResource("RectangleShape2D_m0jnv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion1" unique_id=1739720498]
+texture = ExtResource("4_m0jnv")
+
+[node name="Potion2" type="Area2D" parent="." unique_id=1684547425 node_paths=PackedStringArray("sprite")]
+position = Vector2(587, 153)
+script = ExtResource("3_rpy1s")
+sprite = NodePath("Sprite2D")
+metadata/_custom_type_script = "uid://dure3in8hxjjf"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Potion2" unique_id=84857751]
+position = Vector2(-4, -6)
+scale = Vector2(2.7748218, 1.7526743)
+shape = SubResource("RectangleShape2D_m0jnv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion2" unique_id=379993476]
+texture = ExtResource("5_rumsy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=611279501]

@@ -1,12 +1,19 @@
 extends Node2D
 class_name Room
 
+
+## Background image of room
+@export var background: Sprite2D
 ## Size of the room. Needed for autopopulation if used.
-@export var room_size : Vector2 = Vector2(1080, 1080)
+var room_size : Vector2 = Vector2(1080, 1080)
 ## Emitted when room complete.
 signal room_complete()
 
 var complete = false
+
+func _ready() -> void:
+	if background:
+		room_size = background.texture.get_size()
 
 ## Called when a room is completed.
 func room_finished():

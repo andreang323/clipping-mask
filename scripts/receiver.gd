@@ -2,7 +2,8 @@ extends Area2D
 class_name Receiver
 
 enum COLORTYPES{BLACK, RED, GREEN, YELLOW, BLUE, PURPLE, ORANGE}
-@export var answers : Array[int] = []
+
+@export var answers : Array[COLORTYPES] = []
 var correct = false
 var answer : int = -1
 signal color_received(color: COLORTYPES)
