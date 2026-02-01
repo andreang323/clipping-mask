@@ -65,6 +65,71 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(286, 30)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"sleep"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_54nya"]
+resource_name = "sleep"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"sleep"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(286, 30), Vector2(286, 6), Vector2(286, 30), Vector2(286, 30)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.5400003), Vector2(0.5, 0.5), Vector2(0.5, 0.5)]
+}
 
 [sub_resource type="Animation" id="Animation_flh4e"]
 resource_name = "spooked"
@@ -120,11 +185,14 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_205kr"]
 _data = {
 &"RESET": SubResource("Animation_c5uie"),
+&"sleep": SubResource("Animation_54nya"),
 &"spooked": SubResource("Animation_flh4e")
 }
 
-[node name="Room2" type="Node2D" unique_id=2029889854 node_paths=PackedStringArray("background", "sound")]
+[node name="Room2" type="Node2D" unique_id=2029889854 node_paths=PackedStringArray("needed_receivers", "other_receivers", "background", "sound")]
 script = ExtResource("1_34xmr")
+needed_receivers = [NodePath("Receiver15"), NodePath("Receiver14"), NodePath("Receiver13"), NodePath("Receiver12"), NodePath("Receiver11"), NodePath("Receiver10"), NodePath("Receiver9"), NodePath("Receiver8")]
+other_receivers = [NodePath("Receiver7"), NodePath("Receiver6"), NodePath("Receiver5"), NodePath("Receiver4"), NodePath("Receiver3"), NodePath("Receiver2"), NodePath("Receiver")]
 background = NodePath("Background")
 sound = NodePath("Marimba")
 metadata/_custom_type_script = "uid://524yva3w0xf3"
@@ -274,7 +342,7 @@ position = Vector2(-42, -1)
 texture = ExtResource("15_54nya")
 
 [node name="Potion13" parent="." unique_id=63535995 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
-position = Vector2(636, 144)
+position = Vector2(722, 186)
 particle_color = Color(0.7411765, 0.039215688, 0.09803922, 1)
 particle_type = 1
 id = 15
