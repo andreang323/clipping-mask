@@ -208,8 +208,6 @@ position = Vector2(-89, 105)
 [node name="Sprite2D" type="Sprite2D" parent="Potion15" unique_id=1734838388]
 texture = ExtResource("18_w5lh4")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=611279501]
-
 [node name="Receiver" parent="." unique_id=666436468 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
 position = Vector2(-798, 237)
 answers = Array[int]([4])
@@ -301,6 +299,8 @@ snap_enabled = false
 
 [node name="CollisionShape2D" parent="Receiver15" index="1" unique_id=1908720178]
 position = Vector2(0, 0)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=611279501]
 
 [editable path="Potion9"]
 [editable path="Potion10"]

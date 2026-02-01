@@ -1,0 +1,329 @@
+[gd_scene format=3 uid="uid://wtxhl7nbanbo"]
+
+[ext_resource type="Script" uid="uid://bwpw31032fqf0" path="res://levels/room3/room_3.gd" id="1_mn4nl"]
+[ext_resource type="Texture2D" uid="uid://dig5ykwh3trsn" path="res://levels/room3/sprites/room_3.png" id="2_a4cwi"]
+[ext_resource type="PackedScene" uid="uid://jmiepmoej4kg" path="res://objects/color_drag.tscn" id="3_xnabr"]
+[ext_resource type="Texture2D" uid="uid://wvwlwfj6caeq" path="res://levels/room3/sprites/000.png" id="4_kumdb"]
+[ext_resource type="Texture2D" uid="uid://b44gaw4wphmfo" path="res://levels/room3/sprites/009.png" id="5_y0o54"]
+[ext_resource type="Texture2D" uid="uid://crmlckqrfder2" path="res://levels/room3/sprites/001.png" id="6_kuw0l"]
+[ext_resource type="Texture2D" uid="uid://b2vxhgu2dvvi" path="res://levels/room3/sprites/002.png" id="7_4yoy5"]
+[ext_resource type="Texture2D" uid="uid://cei6xfsrgsr1n" path="res://levels/room3/sprites/003.png" id="8_bstu6"]
+[ext_resource type="Texture2D" uid="uid://dvapvutqridsm" path="res://levels/room3/sprites/004.png" id="9_lfgwl"]
+[ext_resource type="Texture2D" uid="uid://binmxip884o1h" path="res://levels/room3/sprites/005.png" id="10_xnffc"]
+[ext_resource type="Texture2D" uid="uid://c2gd1d5b1p5hi" path="res://levels/room3/sprites/006.png" id="11_vnkpx"]
+[ext_resource type="Texture2D" uid="uid://15yf00pgj3ew" path="res://levels/room3/sprites/007.png" id="12_nfeqd"]
+[ext_resource type="Texture2D" uid="uid://xwfkqfhici2p" path="res://levels/room3/sprites/008.png" id="13_h1gj5"]
+[ext_resource type="Texture2D" uid="uid://b1h64b24jsl6g" path="res://levels/room3/sprites/010.png" id="14_oob8q"]
+[ext_resource type="Texture2D" uid="uid://dl0xuwt0h3w8t" path="res://levels/room3/sprites/011.png" id="15_txkxx"]
+[ext_resource type="Texture2D" uid="uid://ceask0n0uv10d" path="res://levels/room3/sprites/012.png" id="16_5g37l"]
+[ext_resource type="Texture2D" uid="uid://b1yp3602h7j54" path="res://levels/room3/sprites/013.png" id="17_eu8qd"]
+[ext_resource type="Texture2D" uid="uid://46eonxmp83a1" path="res://levels/room3/sprites/014.png" id="18_pjx54"]
+[ext_resource type="Texture2D" uid="uid://kdxnoad2rd4g" path="res://levels/room3/sprites/016.png" id="19_3qwd0"]
+[ext_resource type="Texture2D" uid="uid://dt8fyxg2svc8x" path="res://levels/room3/sprites/017.png" id="20_ldho0"]
+[ext_resource type="Texture2D" uid="uid://bx6g4oyyovl5i" path="res://levels/room3/sprites/015.png" id="21_5f1ph"]
+[ext_resource type="Texture2D" uid="uid://dvqxfgwhyujik" path="res://levels/room3/sprites/018.png" id="22_jfb6w"]
+[ext_resource type="Texture2D" uid="uid://dcd675k6d1upc" path="res://levels/room3/sprites/019.png" id="23_j1kc0"]
+[ext_resource type="PackedScene" uid="uid://c0gjg6cvalg8o" path="res://objects/receiver.tscn" id="24_kuw0l"]
+
+[node name="Room" type="Node2D" unique_id=171222829]
+script = ExtResource("1_mn4nl")
+
+[node name="Room3" type="Sprite2D" parent="." unique_id=525599485]
+z_index = 1
+texture = ExtResource("2_a4cwi")
+metadata/_edit_lock_ = true
+
+[node name="Color" parent="." unique_id=1426723397 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-656, -280)
+particle_color = Color(0.53333336, 0.4862745, 0.2784314, 1)
+id = 3
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color" unique_id=1035770784]
+texture = ExtResource("4_kumdb")
+
+[node name="Color13" parent="." unique_id=1569752702 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-524, -142)
+particle_color = Color(0.36078432, 0.5882353, 0.43529412, 1)
+particle_type = 1
+id = 13
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color13" unique_id=875500446]
+texture = ExtResource("16_5g37l")
+
+[node name="Color14" parent="." unique_id=1090893236 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-674, -122)
+particle_color = Color(0.4509804, 0.28235295, 0.5764706, 1)
+particle_type = 1
+id = 18
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color14" unique_id=1443198013]
+texture = ExtResource("17_eu8qd")
+
+[node name="Color15" parent="." unique_id=1571870477 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-783, -172)
+particle_color = Color(0.4509804, 0.28235295, 0.5764706, 1)
+particle_type = 1
+id = 18
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color15" unique_id=435964965]
+texture = ExtResource("18_pjx54")
+
+[node name="Color17" parent="." unique_id=1501076102 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-595, -137)
+particle_color = Color(0.4509804, 0.28235295, 0.5764706, 1)
+particle_type = 1
+id = 18
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color17" unique_id=2135998885]
+texture = ExtResource("19_3qwd0")
+offset = Vector2(-19, 9)
+
+[node name="Color18" parent="." unique_id=1521846134 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-541, -312)
+particle_color = Color(0.4509804, 0.28235295, 0.5764706, 1)
+particle_type = 1
+id = 18
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color18" unique_id=1750021012]
+texture = ExtResource("20_ldho0")
+
+[node name="Color16" parent="." unique_id=2121606374 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-730, -115)
+particle_color = Color(0.36078432, 0.5882353, 0.43529412, 1)
+particle_type = 1
+id = 8
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color16" unique_id=1306477626]
+texture = ExtResource("21_5f1ph")
+
+[node name="Color19" parent="." unique_id=1443767129 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-610, -229)
+particle_color = Color(0.36078432, 0.5882353, 0.43529412, 1)
+particle_type = 1
+id = 15
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color19" unique_id=560378328]
+texture = ExtResource("22_jfb6w")
+
+[node name="Color20" parent="." unique_id=365643343 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-626, -397)
+particle_color = Color(0.34509805, 0.1882353, 0.18431373, 1)
+sprite = NodePath("Sprite2D")
+
+[node name="Particles" parent="Color20" index="3" unique_id=1701321061]
+position = Vector2(-5, -29)
+
+[node name="Sprite2D" type="Sprite2D" parent="Color20" unique_id=442673747]
+texture = ExtResource("23_j1kc0")
+
+[node name="Color11" parent="." unique_id=1901696115 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-514, -241)
+particle_color = Color(0.7882353, 0.39607844, 0.5921569, 1)
+id = 12
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color11" unique_id=1256365480]
+texture = ExtResource("14_oob8q")
+
+[node name="Color10" parent="." unique_id=1867093666 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-632, -67)
+particle_color = Color(0.14117648, 0.20784314, 0.54509807, 1)
+particle_type = 1
+id = 4
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color10" unique_id=653725981]
+texture = ExtResource("5_y0o54")
+
+[node name="Color2" parent="." unique_id=1612601433 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-740, -71)
+particle_color = Color(0.5176471, 0.16078432, 0.14509805, 1)
+particle_type = 1
+id = 1
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color2" unique_id=1914563093]
+texture = ExtResource("6_kuw0l")
+
+[node name="Color3" parent="." unique_id=1010086359 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-566, 47)
+particle_color = Color(0.28627452, 0.21960784, 0.5647059, 1)
+id = 5
+sprite = NodePath("Sprite2D")
+
+[node name="Particles" parent="Color3" index="3" unique_id=1701321061]
+position = Vector2(-110, 65)
+
+[node name="Sprite2D" type="Sprite2D" parent="Color3" unique_id=776844993]
+texture = ExtResource("7_4yoy5")
+
+[node name="Color4" parent="." unique_id=1310889173 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-760, 7)
+particle_color = Color(0.34509805, 0.1882353, 0.18431373, 1)
+id = 22
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color4" unique_id=373374190]
+texture = ExtResource("8_bstu6")
+
+[node name="Color5" parent="." unique_id=1645171467 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-644, 22)
+particle_color = Color(0.40784314, 0.65882355, 0.7254902, 1)
+id = 14
+sprite = NodePath("Sprite2D")
+
+[node name="Particles" parent="Color5" index="3" unique_id=1701321061]
+position = Vector2(-7, -76)
+
+[node name="Sprite2D" type="Sprite2D" parent="Color5" unique_id=200245183]
+texture = ExtResource("9_lfgwl")
+
+[node name="Color6" parent="." unique_id=868518941 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-535, -404)
+particle_color = Color(0.69803923, 0.49411765, 0.34509805, 1)
+id = 6
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color6" unique_id=2027248367]
+texture = ExtResource("10_xnffc")
+
+[node name="Color7" parent="." unique_id=937216123 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-805, -355)
+particle_color = Color(0.7294118, 0.72156864, 0.3764706, 1)
+id = 3
+sprite = NodePath("Sprite2D")
+
+[node name="Particles" parent="Color7" index="3" unique_id=1701321061]
+position = Vector2(30, -58)
+
+[node name="Sprite2D" type="Sprite2D" parent="Color7" unique_id=1622391787]
+texture = ExtResource("11_vnkpx")
+
+[node name="Color8" parent="." unique_id=644291869 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-678, -169)
+particle_color = Color(0.50980395, 0.6862745, 0.36078432, 1)
+id = 11
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color8" unique_id=453952201]
+texture = ExtResource("12_nfeqd")
+
+[node name="Color9" parent="." unique_id=843512317 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-709, -404)
+particle_color = Color(0.3254902, 0.41960785, 0.42745098, 1)
+id = 21
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color9" unique_id=397662689]
+texture = ExtResource("13_h1gj5")
+
+[node name="Color12" parent="." unique_id=1435961075 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_xnabr")]
+position = Vector2(-804, -156)
+particle_color = Color(0.9529412, 0.6901961, 0.45882353, 1)
+id = 16
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Color12" unique_id=1289983044]
+texture = ExtResource("15_txkxx")
+
+[node name="Receiver" parent="." unique_id=666436468 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(-99, -142)
+answers = Array[int]([1])
+snap_enabled = false
+
+[node name="Receiver2" parent="." unique_id=1335974133 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(-16, -165)
+answers = Array[int]([4])
+snap_enabled = false
+
+[node name="Receiver3" parent="." unique_id=1529179917 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(-226, 143)
+answers = Array[int]([15])
+
+[node name="Receiver4" parent="." unique_id=185576306 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(-31, 157)
+answers = Array[int]([18])
+
+[node name="Receiver5" parent="." unique_id=1281426162 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(96, 150)
+answers = Array[int]([13])
+
+[node name="Receiver6" parent="." unique_id=182813698 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(-104, 279)
+answers = Array[int]([18])
+
+[node name="Receiver7" parent="." unique_id=909336497 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(57, 330)
+answers = Array[int]([18])
+
+[node name="Receiver8" parent="." unique_id=239515936 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(-157, 379)
+answers = Array[int]([8])
+
+[node name="Receiver9" parent="." unique_id=566892752 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(-28, 406)
+answers = Array[int]([18])
+
+[node name="Receiver10" parent="." unique_id=421050011 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(432, 387)
+answers = Array[int]([5])
+snap_enabled = false
+
+[node name="Receiver11" parent="." unique_id=1182120565 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(452, 385)
+answers = Array[int]([14])
+snap_enabled = false
+
+[node name="Receiver12" parent="." unique_id=1552187982 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(631, 436)
+answers = Array[int]([22])
+
+[node name="Receiver13" parent="." unique_id=900441349 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(721, 349)
+answers = Array[int]([6])
+
+[node name="Receiver14" parent="." unique_id=766121726 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(854, 387)
+answers = Array[int]([3])
+snap_enabled = false
+
+[node name="Receiver15" parent="." unique_id=1792928449 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(939, 383)
+answers = Array[int]([0])
+snap_enabled = false
+
+[node name="Receiver16" parent="." unique_id=1543577960 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(950, -375)
+answers = Array[int]([21])
+snap_enabled = false
+
+[node name="Receiver17" parent="." unique_id=926776702 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(875, -408)
+answers = Array[int]([11])
+
+[node name="Receiver18" parent="." unique_id=1987599793 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(808, -471)
+answers = Array[int]([16])
+
+[node name="Receiver19" parent="." unique_id=377593644 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(593, -357)
+answers = Array[int]([12])
+
+[node name="Receiver20" parent="." unique_id=1250433917 groups=["Receivers"] instance=ExtResource("24_kuw0l")]
+position = Vector2(307, -384)
+answers = Array[int]([3])
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1074611480]
+
+[editable path="Color20"]
+[editable path="Color3"]
+[editable path="Color5"]
+[editable path="Color7"]

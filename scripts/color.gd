@@ -6,10 +6,12 @@ var mouse_offset = Vector2(0,0)
 signal drag_ended
 
 @export var particle_color : Color
+## Set this to toggle between solid and liquid particle effects.
 @export var particle_type = 0
+## Set this to automatically generate a collision shape.
 @export var auto_shape = true
 var drag_started = true
-enum COLORTYPES{BLACK, RED, GREEN, YELLOW, BLUE, PURPLE, ORANGE, MAGENTA, MAROON, AZURE, FUSCHIA, VERT, PERIWINKLE, AQUAMARINE, CYAN, WHITE, PEACH, RAINBOW}
+enum COLORTYPES{BLACK, RED, GREEN, YELLOW, BLUE, PURPLE, ORANGE, MAGENTA, MAROON, AZURE, FUSCHIA, VERT, PERIWINKLE, AQUAMARINE, CYAN, WHITE, PEACH, RAINBOW, SPACE, CRIMSON, GRADIENT, STRIPED, BEIGE}
 # variable to check against receiver's desired ids
 @export var id: COLORTYPES
 
