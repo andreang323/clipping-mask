@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d0dwe2bbpg4w"]
+
+[ext_resource type="Script" uid="uid://by1etgn0kcsnf" path="res://levels/room1/room_1.gd" id="1_w7pcf"]
+[ext_resource type="Texture2D" uid="uid://babv8c84ngway" path="res://levels/room1/sprites/room1.png" id="2_w7pcf"]
+[ext_resource type="Texture2D" uid="uid://c7g5ge25kq16q" path="res://icon.svg" id="3_ifoym"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w7pcf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8j72"]
+size = Vector2(64, 64)
+
+[node name="Room1" type="Node2D" unique_id=1074964609]
+script = ExtResource("1_w7pcf")
+metadata/_custom_type_script = "uid://524yva3w0xf3"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1059298015]
+z_index = 1
+texture = ExtResource("2_w7pcf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2127007782]
+offset_left = -77.00001
+offset_top = -538.00006
+offset_right = -37.000008
+offset_bottom = -498.00006
+scale = Vector2(24.799995, 13.56)
+color = Color(0, 0, 0, 1)
+
+[node name="LightChecker" type="Area2D" parent="." unique_id=1607170855]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightChecker" unique_id=223997157]
+position = Vector2(18, -120)
+shape = SubResource("CircleShape2D_w7pcf")
+
+[node name="Moon" type="Sprite2D" parent="." unique_id=1864886235]
+position = Vector2(722, -246)
+texture = ExtResource("3_ifoym")
+
+[node name="Area2D" type="Area2D" parent="Moon" unique_id=1546066210]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moon/Area2D" unique_id=1725127671]
+shape = SubResource("RectangleShape2D_u8j72")
