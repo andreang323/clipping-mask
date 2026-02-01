@@ -16,6 +16,9 @@ var current_room_index: int = 0
 
 func _ready() -> void:
 	GlobalFlags.go_to_final_level.connect(load_final_level)
+
+	var room_id: int = 0
+
 	# Autopopulate rooms.
 	if autopopulate:
 		var current_location = base_location
@@ -51,6 +54,9 @@ func _ready() -> void:
 				x_counter = 0
 				y_counter += 1
 				current_location.y += roomInstance.room_size.y/2
+			
+			roomInstance.room_id = room_id
+			room_id += 1
 	
 	# Initialize camera position.
 	$Camera2D.position = $Rooms.get_child(0).position
@@ -89,6 +95,8 @@ func go_left():
 
 	current_room_index -= 1
 
+	GlobalFlags.enter_room.emit(current_room_index)
+
 func go_right():
 	if (current_room_index == len(rooms) - 1): return
 	var all_rooms = $Rooms.get_children()
@@ -103,6 +111,8 @@ func go_right():
 	tween.tween_property(room, "modulate", Color(1,1,1), 0.5)
 
 	current_room_index += 1
+
+	GlobalFlags.enter_room.emit(current_room_index)
 
 func load_final_level() -> void:
 	var all_rooms: Array[Node] = $Rooms.get_children()

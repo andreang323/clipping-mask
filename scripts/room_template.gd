@@ -10,6 +10,8 @@ var room_size : Vector2 = Vector2(1980, 1080)
 ## Emitted when room complete.
 signal room_complete()
 
+var room_id: int
+
 var complete = false
 
 func _ready() -> void:
