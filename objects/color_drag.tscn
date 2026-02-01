@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://jmiepmoej4kg"]
 
 [ext_resource type="Script" uid="uid://dure3in8hxjjf" path="res://color.gd" id="1_fmtob"]
-[ext_resource type="Texture2D" uid="uid://c7g5ge25kq16q" path="res://icon.svg" id="2_56vdb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_55ksx"]
 
@@ -10,9 +9,6 @@ size = Vector2(232, 171)
 
 [node name="Color" type="Area2D" unique_id=1426723397]
 script = ExtResource("1_fmtob")
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=1567540363]
-texture = ExtResource("2_56vdb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=68830278]
 material = SubResource("ShaderMaterial_55ksx")

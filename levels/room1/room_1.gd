@@ -1,10 +1,13 @@
 extends Room
 
+var complete = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func color_received():
+	for receiver in get_tree().get_nodes_in_group("Receivers"):
+		if !receiver.correct:
+			return
+	for color_drag in get_tree().get_nodes_in_group("Colors"):
+		if color_drag is ColorDrag:
+			color_drag.disable()
+	complete = true
+	print("room complete")

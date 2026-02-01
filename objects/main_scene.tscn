@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk8dvgu8bfasp"]
+[gd_scene format=3 uid="uid://bk8dvgu8bfasp"]
 
 [ext_resource type="Script" uid="uid://dqqgc5dmtdnxg" path="res://scripts/main_scene.gd" id="1_qqab8"]
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene" type="Node2D" unique_id=2025330535]
 script = ExtResource("1_qqab8")
 
-[node name="Rooms" type="Node2D" parent="."]
+[node name="Rooms" type="Node2D" parent="." unique_id=532198741]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1535711281]
 position = Vector2(960, 540)
