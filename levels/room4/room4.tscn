@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b2l1vlteo8sto" path="res://levels/room4/room_4.gd" id="1_o4caw"]
 [ext_resource type="Texture2D" uid="uid://cmemsda8ixiue" path="res://levels/room4/sprites/room_4.png" id="2_o4caw"]
+[ext_resource type="AudioStream" uid="uid://bx0iu4jk8v6ay" path="res://assets/audio/marimba.mp3" id="3_18ht7"]
 
-[node name="Room4" type="Node2D" unique_id=1049781343 node_paths=PackedStringArray("background")]
+[node name="Room4" type="Node2D" unique_id=1049781343 node_paths=PackedStringArray("background", "sound")]
 script = ExtResource("1_o4caw")
 background = NodePath("Sprite2D")
+sound = NodePath("Marimba")
 metadata/_custom_type_script = "uid://524yva3w0xf3"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1131614916]
@@ -19,3 +21,9 @@ offset_right = 210.0
 offset_bottom = -100.0
 mouse_filter = 2
 color = Color(0.69135684, 0.6913568, 0.69135684, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1808669986]
+
+[node name="Marimba" type="AudioStreamPlayer" parent="." unique_id=557304531]
+stream = ExtResource("3_18ht7")
+bus = &"SFX"
