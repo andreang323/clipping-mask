@@ -23,6 +23,7 @@ sound = NodePath("Marimba")
 [node name="Background" type="Sprite2D" parent="." unique_id=1999614817]
 z_index = 1
 texture = ExtResource("2_mws08")
+offset = Vector2(0, -480)
 
 [node name="Color" parent="." unique_id=1426723397 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_q5jur")]
 position = Vector2(782, 355)
