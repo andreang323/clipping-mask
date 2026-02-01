@@ -13,6 +13,7 @@ func enter_room(room_id_transition: int) -> void:
 	if room_id == room_id_transition:
 		if GlobalFlags.room2_data.cat_awakened:
 			await get_tree().create_timer(.5).timeout
+			$CatFallSFX.play()
 			$CatAnim/Cover.visible = false
 			$CatAnim/CatCloth.visible = true
 			$CatAnim/AnimationPlayer.play("cat_fall")
@@ -29,6 +30,7 @@ func _on_room_complete() -> void:
 func _on_receiver_3_color_received(_color: Receiver.COLORTYPES) -> void:
 	$Sprite2D.texture = free_key_texture
 	$Key.visible = true
+	$Ding.play()
 	$Key/AnimationPlayer.play("get_key")
 	key_color.visible = false
 	GlobalFlags.key_obtained.emit()

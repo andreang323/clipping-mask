@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bx0iu4jk8v6ay" path="res://assets/audio/marimba.mp3" id="7_8cty6"]
 [ext_resource type="Script" uid="uid://drs5f5f8yb4gn" path="res://levels/room1/key.gd" id="8_3x8wl"]
 [ext_resource type="Texture2D" uid="uid://dv424rtxt6nbc" path="res://levels/room4/sprites/key_sprite.png" id="9_3x8wl"]
+[ext_resource type="AudioStream" uid="uid://bgts3cn8tdtge" path="res://assets/audio/fade_steps.mp3" id="10_tsbat"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4g6k6"]
 size = Vector2(175.25, 188)
@@ -113,6 +114,10 @@ position = Vector2(-353, -203)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinalAreaTeleport" unique_id=867252232]
 scale = Vector2(1.56, 1.4800016)
 shape = SubResource("RectangleShape2D_tsbat")
+
+[node name="Steps" type="AudioStreamPlayer" parent="." unique_id=206854954]
+stream = ExtResource("10_tsbat")
+bus = &"SFX"
 
 [connection signal="color_received" from="LightChecker" to="." method="_on_light_checker_color_received"]
 [connection signal="color_received" from="GemChecker" to="." method="_on_gem_checker_color_received"]
