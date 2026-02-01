@@ -13,6 +13,7 @@ var base_location = Vector2(540, 960)
 var current_room_index: int = 0
 
 func _ready() -> void:
+	GlobalFlags.go_to_final_level.connect(load_final_level)
 	# Autopopulate rooms.
 	if autopopulate:
 		var current_location = base_location
@@ -100,3 +101,6 @@ func go_right():
 	tween.tween_property(room, "modulate", Color(1,1,1), 0.5)
 
 	current_room_index += 1
+
+func load_final_level() -> void:
+	print("load final level")

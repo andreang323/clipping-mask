@@ -6,6 +6,9 @@ var room3_data: Room3Data
 var room4_data: Room4Data
 var room5_data: Room5Data
 
+signal key_obtained()
+signal go_to_final_level()
+
 func _ready():
     room1_data = Room1Data.new()
     room2_data = Room2Data.new()
