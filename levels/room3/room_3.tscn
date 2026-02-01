@@ -25,8 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://dcd675k6d1upc" path="res://levels/room3/sprites/019.png" id="23_j1kc0"]
 [ext_resource type="PackedScene" uid="uid://c0gjg6cvalg8o" path="res://objects/receiver.tscn" id="24_kuw0l"]
 
-[node name="Room" type="Node2D" unique_id=171222829]
+[node name="Room" type="Node2D" unique_id=171222829 node_paths=PackedStringArray("background")]
 script = ExtResource("1_mn4nl")
+background = NodePath("Room3")
 
 [node name="Room3" type="Sprite2D" parent="." unique_id=525599485]
 z_index = 1
