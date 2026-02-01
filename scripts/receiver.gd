@@ -9,6 +9,7 @@ var answer : int = -1
 ## Toggle this to determine snapping behavior.
 @export var snap_enabled = true
 signal color_received(color: COLORTYPES)
+signal correct_color_received()
 
 ## Automatically connects color_received signal to parent
 func _ready() -> void:
@@ -28,6 +29,7 @@ func _on_area_entered(area: Area2D) -> void:
 				if answer in answers:
 					correct = true
 					color_received.emit(area.id)
+					correct_color_received.emit()
 				else:
 					correct = false
 			# Snap disabled but we got the correct answer
