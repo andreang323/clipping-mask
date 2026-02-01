@@ -1,16 +1,27 @@
 [gd_scene format=3 uid="uid://hgjouu5xi2jr"]
 
-[ext_resource type="Script" uid="uid://524yva3w0xf3" path="res://scripts/room_template.gd" id="1_seud8"]
+[ext_resource type="Script" uid="uid://b78h4hr8doim6" path="res://levels/room2/room_2.gd" id="1_34xmr"]
 [ext_resource type="Texture2D" uid="uid://dx8mtukalqti2" path="res://levels/room2/sprites/background.png" id="2_wqp6q"]
-[ext_resource type="Script" uid="uid://dure3in8hxjjf" path="res://scripts/color.gd" id="3_rpy1s"]
 [ext_resource type="Texture2D" uid="uid://htj01e8glk3y" path="res://levels/room2/sprites/000.png" id="4_m0jnv"]
 [ext_resource type="Texture2D" uid="uid://c5c5eefes8x3x" path="res://levels/room2/sprites/001.png" id="5_rumsy"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0jnv"]
-size = Vector2(33.828125, 66)
+[ext_resource type="PackedScene" uid="uid://jmiepmoej4kg" path="res://objects/color_drag.tscn" id="6_4g868"]
+[ext_resource type="Texture2D" uid="uid://dlke5nkmbsds1" path="res://levels/room2/sprites/002.png" id="6_n2gtl"]
+[ext_resource type="PackedScene" uid="uid://c0gjg6cvalg8o" path="res://objects/receiver.tscn" id="6_qdcnm"]
+[ext_resource type="Texture2D" uid="uid://c26ftwp6uy4pv" path="res://levels/room2/sprites/003.png" id="7_f6bqn"]
+[ext_resource type="Texture2D" uid="uid://b5xhshvckduil" path="res://levels/room2/sprites/004.png" id="8_je2f5"]
+[ext_resource type="Texture2D" uid="uid://c74sawjqbn3u1" path="res://levels/room2/sprites/006.png" id="9_drfg4"]
+[ext_resource type="Texture2D" uid="uid://ciafx5aixqc87" path="res://levels/room2/sprites/007.png" id="10_23m4r"]
+[ext_resource type="Texture2D" uid="uid://w7wsifih2vyk" path="res://levels/room2/sprites/small_shapes/000.png" id="11_34xmr"]
+[ext_resource type="Texture2D" uid="uid://bkp42s5dbeh7b" path="res://levels/room2/sprites/small_shapes/002.png" id="12_pnbfm"]
+[ext_resource type="Texture2D" uid="uid://dhuq0dboswyos" path="res://levels/room2/sprites/small_shapes/003.png" id="13_pueeo"]
+[ext_resource type="Texture2D" uid="uid://y8qg4gmqowqd" path="res://levels/room2/sprites/small_shapes/004.png" id="14_8awn6"]
+[ext_resource type="Texture2D" uid="uid://d3bx78oaer6go" path="res://levels/room2/sprites/small_shapes/005.png" id="15_54nya"]
+[ext_resource type="Texture2D" uid="uid://daqp6qj5wtgmg" path="res://levels/room2/sprites/small_shapes/006.png" id="16_6cuco"]
+[ext_resource type="Texture2D" uid="uid://dfnaf48pjmmun" path="res://levels/room2/sprites/small_shapes/007.png" id="17_b76fy"]
+[ext_resource type="Texture2D" uid="uid://c0gmku2f4sqnk" path="res://levels/room2/sprites/small_shapes/0010.png" id="18_w5lh4"]
 
 [node name="Room2" type="Node2D" unique_id=2029889854 node_paths=PackedStringArray("background")]
-script = ExtResource("1_seud8")
+script = ExtResource("1_34xmr")
 background = NodePath("Background")
 metadata/_custom_type_script = "uid://524yva3w0xf3"
 
@@ -26,30 +37,283 @@ offset_bottom = 494.0
 mouse_filter = 2
 color = Color(0.17254902, 0.16470589, 0.14509805, 1)
 
-[node name="Potion1" type="Area2D" parent="." unique_id=2139051581 node_paths=PackedStringArray("sprite")]
-position = Vector2(885, 342)
-script = ExtResource("3_rpy1s")
+[node name="Potion1" parent="." unique_id=1426723397 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(926, 360)
+particle_color = Color(0.78431374, 0.9843137, 0.3137255, 1)
+particle_type = 1
+id = 2
 sprite = NodePath("Sprite2D")
-metadata/_custom_type_script = "uid://dure3in8hxjjf"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Potion1" unique_id=471851416]
-shape = SubResource("RectangleShape2D_m0jnv")
-
-[node name="Sprite2D" type="Sprite2D" parent="Potion1" unique_id=1739720498]
-texture = ExtResource("4_m0jnv")
-
-[node name="Potion2" type="Area2D" parent="." unique_id=1684547425 node_paths=PackedStringArray("sprite")]
-position = Vector2(587, 153)
-script = ExtResource("3_rpy1s")
-sprite = NodePath("Sprite2D")
-metadata/_custom_type_script = "uid://dure3in8hxjjf"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Potion2" unique_id=84857751]
-position = Vector2(-4, -6)
-scale = Vector2(2.7748218, 1.7526743)
-shape = SubResource("RectangleShape2D_m0jnv")
-
-[node name="Sprite2D" type="Sprite2D" parent="Potion2" unique_id=379993476]
+[node name="Sprite2D" type="Sprite2D" parent="Potion1" unique_id=379993476]
 texture = ExtResource("5_rumsy")
 
+[node name="Potion2" parent="." unique_id=1823334564 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(620, 80)
+particle_color = Color(0.6431373, 0.76862746, 0.54509807, 1)
+particle_type = 1
+id = 4
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion2" unique_id=193171430]
+texture = ExtResource("4_m0jnv")
+
+[node name="Potion3" parent="." unique_id=1686804641 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(528, 166)
+particle_color = Color(0.32941177, 0.28627452, 0.8235294, 1)
+particle_type = 1
+id = 5
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion3" unique_id=1286661637]
+texture = ExtResource("6_n2gtl")
+
+[node name="Potion4" parent="." unique_id=560587604 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(581, 260)
+particle_color = Color(0.8156863, 0.5372549, 0.39607844, 1)
+particle_type = 1
+id = 1
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion4" unique_id=1089292788]
+texture = ExtResource("7_f6bqn")
+
+[node name="Potion5" parent="." unique_id=640039793 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(908, 165)
+particle_color = Color(0.47058824, 0.11764706, 0.18431373, 1)
+particle_type = 1
+id = 8
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion5" unique_id=2127857233]
+texture = ExtResource("8_je2f5")
+
+[node name="Potion6" parent="." unique_id=1588722309 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(876, 142)
+particle_color = Color(0.8, 0.5176471, 0.35686275, 1)
+particle_type = 1
+id = 16
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion6" unique_id=1319408610]
+texture = ExtResource("9_drfg4")
+
+[node name="Potion7" parent="." unique_id=896904659 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(771, 386)
+particle_color = Color(0.24705882, 0.54509807, 0.93333334, 1)
+particle_type = 1
+id = 13
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion7" unique_id=1772920902]
+texture = ExtResource("10_23m4r")
+
+[node name="Potion8" parent="." unique_id=364027735 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(661, 377)
+particle_color = Color(1, 0.7607843, 0, 1)
+particle_type = 1
+id = 6
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion8" unique_id=342879824]
+texture = ExtResource("11_34xmr")
+
+[node name="Potion9" parent="." unique_id=1464524413 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(420, 271)
+particle_color = Color(0.03137255, 0.6901961, 0.8862745, 1)
+particle_type = 1
+id = 14
+sprite = NodePath("Sprite2D")
+
+[node name="Particles" parent="Potion9" index="3" unique_id=1701321061]
+position = Vector2(47, -118)
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion9" unique_id=1124473505]
+texture = ExtResource("12_pnbfm")
+
+[node name="Potion10" parent="." unique_id=405372563 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(549, 394)
+particle_color = Color(0.101960786, 0.3647059, 0.827451, 1)
+particle_type = 1
+id = 9
+sprite = NodePath("Sprite2D")
+
+[node name="Particles" parent="Potion10" index="3" unique_id=1701321061]
+position = Vector2(51, -5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion10" unique_id=363292012]
+texture = ExtResource("13_pueeo")
+
+[node name="Potion11" parent="." unique_id=309837914 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(634, 289)
+particle_color = Color(0.45882353, 0.89411765, 0.31764707, 1)
+particle_type = 1
+id = 11
+sprite = NodePath("Sprite2D")
+
+[node name="Particles" parent="Potion11" index="3" unique_id=1701321061]
+position = Vector2(-48, -76)
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion11" unique_id=1866190978]
+texture = ExtResource("14_8awn6")
+
+[node name="Potion12" parent="." unique_id=790549105 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(603, 334)
+particle_color = Color(0.9529412, 0.2627451, 0.8862745, 1)
+particle_type = 1
+id = 7
+sprite = NodePath("Sprite2D")
+
+[node name="Particles" parent="Potion12" index="3" unique_id=1701321061]
+position = Vector2(-42, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion12" unique_id=1385453414]
+texture = ExtResource("15_54nya")
+
+[node name="Potion13" parent="." unique_id=63535995 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(636, 144)
+particle_color = Color(0.7411765, 0.039215688, 0.09803922, 1)
+particle_type = 1
+id = 15
+sprite = NodePath("Sprite2D")
+
+[node name="Particles" parent="Potion13" index="3" unique_id=1701321061]
+position = Vector2(-114, -107)
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion13" unique_id=325276054]
+texture = ExtResource("16_6cuco")
+
+[node name="Potion14" parent="." unique_id=2081527412 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(824, 224)
+particle_color = Color(1, 0.7607843, 0, 1)
+particle_type = 1
+id = 17
+sprite = NodePath("Sprite2D")
+
+[node name="Particles" parent="Potion14" index="3" unique_id=1701321061]
+position = Vector2(-42, -108)
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion14" unique_id=332669672]
+texture = ExtResource("17_b76fy")
+
+[node name="Potion15" parent="." unique_id=2086925595 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
+position = Vector2(820, 260)
+particle_color = Color(0.40392157, 0.31764707, 0.89411765, 1)
+particle_type = 1
+id = 12
+sprite = NodePath("Sprite2D")
+
+[node name="Particles" parent="Potion15" index="3" unique_id=1701321061]
+position = Vector2(-89, 105)
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion15" unique_id=1734838388]
+texture = ExtResource("18_w5lh4")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=611279501]
+
+[node name="Receiver" parent="." unique_id=666436468 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(-798, 237)
+answers = Array[int]([4])
+
+[node name="Receiver2" parent="." unique_id=787872359 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(-410, 70)
+answers = Array[int]([2])
+
+[node name="Receiver3" parent="." unique_id=684160031 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(-113, 117)
+answers = Array[int]([5])
+
+[node name="Receiver4" parent="." unique_id=1743713620 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(-317, 188)
+answers = Array[int]([1])
+
+[node name="Receiver5" parent="." unique_id=703596118 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(-442, -245)
+answers = Array[int]([8])
+
+[node name="Receiver6" parent="." unique_id=200121840 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(-589, -278)
+answers = Array[int]([16])
+
+[node name="Receiver7" parent="." unique_id=419304062 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(-754, -209)
+answers = Array[int]([13])
+
+[node name="Receiver8" parent="." unique_id=42086509 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(325, -425)
+answers = Array[int]([7])
+snap_enabled = false
+
+[node name="CollisionShape2D" parent="Receiver8" index="1" unique_id=1908720178]
+position = Vector2(0, 0)
+
+[node name="Receiver9" parent="." unique_id=1572400581 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(325, -390)
+answers = Array[int]([14])
+snap_enabled = false
+
+[node name="CollisionShape2D" parent="Receiver9" index="1" unique_id=1908720178]
+position = Vector2(0, 0)
+
+[node name="Receiver10" parent="." unique_id=507503401 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(325, -380)
+answers = Array[int]([17])
+snap_enabled = false
+
+[node name="CollisionShape2D" parent="Receiver10" index="1" unique_id=1908720178]
+position = Vector2(0, 0)
+
+[node name="Receiver11" parent="." unique_id=2110849763 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(369, -396)
+answers = Array[int]([12])
+snap_enabled = false
+
+[node name="CollisionShape2D" parent="Receiver11" index="1" unique_id=1908720178]
+position = Vector2(0, 0)
+
+[node name="Receiver12" parent="." unique_id=1723229896 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(668, -319)
+answers = Array[int]([6])
+snap_enabled = false
+
+[node name="CollisionShape2D" parent="Receiver12" index="1" unique_id=1908720178]
+position = Vector2(0, 0)
+
+[node name="Receiver13" parent="." unique_id=1850808409 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(715, -351)
+answers = Array[int]([11])
+snap_enabled = false
+
+[node name="CollisionShape2D" parent="Receiver13" index="1" unique_id=1908720178]
+position = Vector2(0, 0)
+
+[node name="Receiver14" parent="." unique_id=693950740 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(760, -387)
+answers = Array[int]([15])
+snap_enabled = false
+
+[node name="CollisionShape2D" parent="Receiver14" index="1" unique_id=1908720178]
+position = Vector2(0, 0)
+
+[node name="Receiver15" parent="." unique_id=790030654 groups=["Receivers"] instance=ExtResource("6_qdcnm")]
+position = Vector2(832, -424)
+answers = Array[int]([9])
+snap_enabled = false
+
+[node name="CollisionShape2D" parent="Receiver15" index="1" unique_id=1908720178]
+position = Vector2(0, 0)
+
+[editable path="Potion9"]
+[editable path="Potion10"]
+[editable path="Potion11"]
+[editable path="Potion12"]
+[editable path="Potion13"]
+[editable path="Potion14"]
+[editable path="Potion15"]
+[editable path="Receiver8"]
+[editable path="Receiver9"]
+[editable path="Receiver10"]
+[editable path="Receiver11"]
+[editable path="Receiver12"]
+[editable path="Receiver13"]
+[editable path="Receiver14"]
+[editable path="Receiver15"]

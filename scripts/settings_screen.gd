@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var master = AudioServer.get_bus_index("Master")
 @onready var music = AudioServer.get_bus_index("Music")
 @onready var sfx = AudioServer.get_bus_index("SFX")
-
+@export var button : AudioStreamPlayer
 ## Hides quit button on main menu.
 func _ready() -> void:
 	$SettingsMenu/Buttons/QuitButton.hide()
@@ -20,6 +20,8 @@ func _on_quit_button_pressed() -> void:
 
 ## Hides the settings menu.
 func _on_back_pressed() -> void:
+	if button:
+		button.play()
 	get_tree().paused = false # resumes game if paused
 	save_config()
 	hide()
@@ -38,6 +40,8 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 
 ## Toggles fullscreen.
 func _on_check_button_toggled(toggled_on: bool) -> void:
+	if button:
+		button.play()
 	if toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:

@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://jmiepmoej4kg"]
 
-[ext_resource type="Script" uid="uid://dure3in8hxjjf" path="res://color.gd" id="1_fmtob"]
+[ext_resource type="Script" uid="uid://dure3in8hxjjf" path="res://scripts/color.gd" id="1_fmtob"]
+[ext_resource type="AudioStream" uid="uid://dqcr605kxjkw3" path="res://assets/audio/button2.mp3" id="2_cpkg8"]
 [ext_resource type="Texture2D" uid="uid://bh7aop0y38nad" path="res://assets/ui/particle_effects.png" id="2_fmtob"]
+[ext_resource type="AudioStream" uid="uid://irf3jfvyhang" path="res://assets/audio/button.mp3" id="3_jbbof"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_55ksx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1quxe"]
-size = Vector2(232, 171)
+size = Vector2(296, 171)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_56vdb"]
 particles_animation = true
@@ -18,7 +20,7 @@ particles_anim_loop = false
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.013837457), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_jbbof"]
+[sub_resource type="CurveTexture" id="CurveTexture_s8qw6"]
 curve = SubResource("Curve_cpkg8")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s8qw6"]
@@ -31,11 +33,19 @@ initial_velocity_max = 150.0
 angular_velocity_min = -1.6093254e-05
 angular_velocity_max = 299.99997
 gravity = Vector3(0, 400, 0)
-alpha_curve = SubResource("CurveTexture_jbbof")
+alpha_curve = SubResource("CurveTexture_s8qw6")
 anim_offset_max = 1.0
 
 [node name="Color" type="Area2D" unique_id=1426723397]
 script = ExtResource("1_fmtob")
+
+[node name="Button2" type="AudioStreamPlayer" parent="." unique_id=358422190]
+stream = ExtResource("2_cpkg8")
+bus = &"SFX"
+
+[node name="Button" type="AudioStreamPlayer" parent="." unique_id=320560242]
+stream = ExtResource("3_jbbof")
+bus = &"SFX"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=68830278]
 material = SubResource("ShaderMaterial_55ksx")

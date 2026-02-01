@@ -1,0 +1,420 @@
+[gd_scene format=3 uid="uid://xft1sx3nrh3p"]
+
+[ext_resource type="Script" uid="uid://cdmrkxtxroclr" path="res://scripts/main_menu.gd" id="1_rbtvn"]
+[ext_resource type="Texture2D" uid="uid://0oij3i1gwmlo" path="res://assets/titlescreen_assets/title_screen_painting/title_screen_bg_v2.png" id="2_x5iau"]
+[ext_resource type="Texture2D" uid="uid://cs55x256jv7ym" path="res://assets/titlescreen_assets/clipware_logo.png" id="3_f1ap4"]
+[ext_resource type="Texture2D" uid="uid://ncweb5euywrp" path="res://assets/ui/play_button/base.png" id="3_o17ns"]
+[ext_resource type="Texture2D" uid="uid://dgf0nqb6hfqsw" path="res://assets/ui/play_button/000.png" id="4_f1ap4"]
+[ext_resource type="Texture2D" uid="uid://d3vj8ubacbdrq" path="res://assets/ui/play_button/001.png" id="5_cd57b"]
+[ext_resource type="Texture2D" uid="uid://dwei50rpuvfvt" path="res://assets/ui/play_button/002.png" id="6_1lwj7"]
+[ext_resource type="Texture2D" uid="uid://b8otn7wn24jg" path="res://assets/ui/play_button/003.png" id="7_1sy7y"]
+[ext_resource type="Texture2D" uid="uid://sjv3bcew2b47" path="res://assets/ui/settings_button/base.png" id="8_eu1pj"]
+[ext_resource type="Texture2D" uid="uid://bjtuj3ie20xn8" path="res://assets/ui/settings_button/000.png" id="9_vkced"]
+[ext_resource type="Texture2D" uid="uid://ciukyrmby4nm1" path="res://assets/ui/settings_button/001.png" id="10_ro4bk"]
+[ext_resource type="Texture2D" uid="uid://b5dk00xjdvotf" path="res://assets/ui/settings_button/002.png" id="11_hwk18"]
+[ext_resource type="Texture2D" uid="uid://bsydcrall4abl" path="res://assets/ui/settings_button/003.png" id="12_qcrxl"]
+[ext_resource type="Texture2D" uid="uid://ctngs0b2ak0h" path="res://assets/ui/quit_button/base.png" id="13_x0tpj"]
+[ext_resource type="Texture2D" uid="uid://cwhjntv1iwsw" path="res://assets/ui/quit_button/000.png" id="14_w0ucp"]
+[ext_resource type="Texture2D" uid="uid://duih24df4gg5d" path="res://assets/ui/quit_button/001.png" id="15_3djuo"]
+[ext_resource type="Texture2D" uid="uid://cs04jf7lmy36w" path="res://assets/ui/quit_button/002.png" id="16_lx4tn"]
+[ext_resource type="Texture2D" uid="uid://bvtb76dp1ptek" path="res://assets/ui/quit_button/003.png" id="17_h5iq3"]
+[ext_resource type="Script" uid="uid://c32u13jm8lte2" path="res://scripts/draggable.gd" id="18_ghhmh"]
+[ext_resource type="PackedScene" uid="uid://vv1kw068vm8x" path="res://objects/settings_screen.tscn" id="19_eh1i1"]
+[ext_resource type="Texture2D" uid="uid://c2v4a3jnf7l2f" path="res://assets/titlescreen_assets/title_screen_painting/painting_space.png" id="19_hwk18"]
+[ext_resource type="Texture2D" uid="uid://dk080kppjc8db" path="res://assets/titlescreen_assets/title_screen_painting/000.png" id="20_qcrxl"]
+[ext_resource type="Texture2D" uid="uid://b8h1tsvmtulik" path="res://assets/titlescreen_assets/title_screen_painting/001.png" id="22_x0tpj"]
+[ext_resource type="Texture2D" uid="uid://cxas4y6xch8l2" path="res://assets/titlescreen_assets/title_screen_painting/002.png" id="23_w0ucp"]
+[ext_resource type="Texture2D" uid="uid://b56qtbou07qgc" path="res://assets/titlescreen_assets/title_screen_painting/003.png" id="24_3djuo"]
+[ext_resource type="Texture2D" uid="uid://ctg5e62ofsu03" path="res://assets/titlescreen_assets/title_screen_painting/004.png" id="25_lx4tn"]
+[ext_resource type="Texture2D" uid="uid://bvhfo7cd26geu" path="res://assets/titlescreen_assets/title_screen_painting/005.png" id="26_h5iq3"]
+[ext_resource type="Texture2D" uid="uid://c62um55iq0bni" path="res://assets/titlescreen_assets/title_screen_painting/006.png" id="27_ghhmh"]
+[ext_resource type="Texture2D" uid="uid://bagcvqhxjqfo5" path="res://assets/titlescreen_assets/title_screen_painting/007.png" id="28_eh1i1"]
+[ext_resource type="AudioStream" uid="uid://c0m278y577fii" path="res://assets/audio/minimalist_vibes.mp3" id="30_x0tpj"]
+[ext_resource type="AudioStream" uid="uid://bwigd44y6wdb4" path="res://assets/audio/sleeping_in.mp3" id="31_w0ucp"]
+[ext_resource type="AudioStream" uid="uid://dqcr605kxjkw3" path="res://assets/audio/button2.mp3" id="32_lx4tn"]
+[ext_resource type="AudioStream" uid="uid://d32wicbw2bacx" path="res://assets/audio/button3.mp3" id="33_h5iq3"]
+[ext_resource type="AudioStream" uid="uid://irf3jfvyhang" path="res://assets/audio/button.mp3" id="34_ghhmh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aq3ww"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_f1ap4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cd57b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_1lwj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1sy7y")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 0.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ff2mm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_vkced")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ro4bk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_hwk18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qcrxl")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 0.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5uvkx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_w0ucp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3djuo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_lx4tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_h5iq3")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 0.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_b8oht"]
+viewport_path = NodePath("TitleScreen/SubViewportContainer/SubViewport")
+
+[node name="MainMenu" type="Control" unique_id=2099778462 node_paths=PackedStringArray("start_button", "settings_button", "quit_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rbtvn")
+start_button = NodePath("TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/StartButton")
+settings_button = NodePath("TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/SettingsButton")
+quit_button = NodePath("TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/QuitButton")
+
+[node name="TitleScreen" type="CanvasLayer" parent="." unique_id=1847175845]
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="TextureRect" parent="TitleScreen" unique_id=1210103150]
+modulate = Color(0.37981048, 0.37981054, 0.37981048, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_x5iau")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="TitleScreen" unique_id=1087473669]
+offset_right = 4096.0
+offset_bottom = 2048.0
+
+[node name="SubViewport" type="SubViewport" parent="TitleScreen/SubViewportContainer" unique_id=1394838386]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Container" type="VBoxContainer" parent="TitleScreen/SubViewportContainer/SubViewport" unique_id=961040009]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -416.75
+offset_top = -485.0
+offset_right = 416.75
+offset_bottom = 485.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="TitleScreen/SubViewportContainer/SubViewport/Container" unique_id=420258007]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_f1ap4")
+stretch_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="TitleScreen/SubViewportContainer/SubViewport/Container" unique_id=2018520227]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons" unique_id=1868862350]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+texture_normal = ExtResource("3_o17ns")
+texture_pressed = ExtResource("3_o17ns")
+texture_hover = ExtResource("3_o17ns")
+texture_disabled = ExtResource("3_o17ns")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/StartButton" unique_id=1555631260]
+position = Vector2(152, 74)
+sprite_frames = SubResource("SpriteFrames_aq3ww")
+
+[node name="SettingsButton" type="TextureButton" parent="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons" unique_id=1837725474]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+texture_normal = ExtResource("8_eu1pj")
+texture_pressed = ExtResource("8_eu1pj")
+texture_hover = ExtResource("8_eu1pj")
+texture_disabled = ExtResource("8_eu1pj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/SettingsButton" unique_id=1566297609]
+position = Vector2(260.5, 77.5)
+sprite_frames = SubResource("SpriteFrames_ff2mm")
+
+[node name="QuitButton" type="TextureButton" parent="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons" unique_id=1269944750]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+texture_normal = ExtResource("13_x0tpj")
+texture_pressed = ExtResource("13_x0tpj")
+texture_hover = ExtResource("13_x0tpj")
+texture_disabled = ExtResource("13_x0tpj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/QuitButton" unique_id=567083770]
+position = Vector2(159, 80)
+sprite_frames = SubResource("SpriteFrames_5uvkx")
+
+[node name="ColorRect2" type="TextureRect" parent="TitleScreen/SubViewportContainer/SubViewport" unique_id=1987845716]
+anchors_preset = -1
+anchor_left = 0.04375
+anchor_top = 0.075
+anchor_right = 0.28125
+anchor_bottom = 0.912963
+offset_left = -84.0
+offset_top = 47.0
+offset_right = -156.0
+offset_bottom = -112.0
+texture = ExtResource("19_hwk18")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="TitleScreen/SubViewportContainer/SubViewport" unique_id=1490546659]
+offset_left = 1541.0
+offset_top = 170.0
+offset_right = 2001.0
+offset_bottom = 743.0
+theme_override_font_sizes/font_size = 45
+text = "How to play:
+Drag a color
+to objects
+missing color!
+A level is
+completed when
+all objects have
+a color."
+
+[node name="TextureRect" type="TextureRect" parent="TitleScreen" unique_id=107371806]
+clip_children = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("ViewportTexture_b8oht")
+
+[node name="DraggableColor" type="TextureRect" parent="TitleScreen/TextureRect" unique_id=13433724 node_paths=PackedStringArray("drag_sound", "drop_sound")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0625
+anchor_top = 0.11111111
+anchor_right = 0.153125
+anchor_bottom = 0.30277777
+offset_left = -451.0
+offset_top = 132.0
+offset_right = 221.0
+offset_bottom = 605.0
+texture = ExtResource("20_qcrxl")
+script = ExtResource("18_ghhmh")
+drag_sound = NodePath("../../../Button2")
+drop_sound = NodePath("../../../Button")
+
+[node name="DraggableColor2" type="TextureRect" parent="TitleScreen/TextureRect" unique_id=2068026517 node_paths=PackedStringArray("drag_sound", "drop_sound")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14895834
+anchor_top = 0.3314815
+anchor_right = 0.26822916
+anchor_bottom = 0.575
+offset_left = -641.0
+offset_top = -344.0
+offset_right = -56.0
+offset_bottom = -36.0
+texture = ExtResource("22_x0tpj")
+script = ExtResource("18_ghhmh")
+drag_sound = NodePath("../../../Button2")
+drop_sound = NodePath("../../../Button")
+
+[node name="DraggableColor3" type="TextureRect" parent="TitleScreen/TextureRect" unique_id=2047412308 node_paths=PackedStringArray("drag_sound", "drop_sound")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053645834
+anchor_top = 0.61203706
+anchor_right = 0.19166666
+anchor_bottom = 0.88055557
+offset_left = -29.0
+offset_top = -642.0
+offset_right = 51.0
+offset_bottom = -585.0
+texture = ExtResource("23_w0ucp")
+script = ExtResource("18_ghhmh")
+drag_sound = NodePath("../../../Button2")
+drop_sound = NodePath("../../../Button")
+
+[node name="DraggableColor8" type="TextureRect" parent="TitleScreen/TextureRect" unique_id=474977451 node_paths=PackedStringArray("drag_sound", "drop_sound")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053645834
+anchor_top = 0.61203706
+anchor_right = 0.19166666
+anchor_bottom = 0.88055557
+offset_left = -156.0
+offset_top = -414.0
+offset_right = -85.0
+offset_bottom = -370.0
+texture = ExtResource("24_3djuo")
+script = ExtResource("18_ghhmh")
+drag_sound = NodePath("../../../Button2")
+drop_sound = NodePath("../../../Button")
+
+[node name="DraggableColor4" type="TextureRect" parent="TitleScreen/TextureRect" unique_id=1547480996 node_paths=PackedStringArray("drag_sound", "drop_sound")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053645834
+anchor_top = 0.61203706
+anchor_right = 0.19166666
+anchor_bottom = 0.88055557
+offset_left = -392.0
+offset_top = -294.0
+offset_right = -227.0
+offset_bottom = -294.0
+texture = ExtResource("25_lx4tn")
+script = ExtResource("18_ghhmh")
+drag_sound = NodePath("../../../Button2")
+drop_sound = NodePath("../../../Button")
+
+[node name="DraggableColor5" type="TextureRect" parent="TitleScreen/TextureRect" unique_id=326932634 node_paths=PackedStringArray("drag_sound", "drop_sound")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053645834
+anchor_top = 0.61203706
+anchor_right = 0.19166666
+anchor_bottom = 0.88055557
+offset_left = -141.0
+offset_top = -383.0
+offset_right = -29.0
+offset_bottom = -217.0
+texture = ExtResource("26_h5iq3")
+script = ExtResource("18_ghhmh")
+drag_sound = NodePath("../../../Button2")
+drop_sound = NodePath("../../../Button")
+
+[node name="DraggableColor6" type="TextureRect" parent="TitleScreen/TextureRect" unique_id=524566496 node_paths=PackedStringArray("drag_sound", "drop_sound")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053645834
+anchor_top = 0.61203706
+anchor_right = 0.19166666
+anchor_bottom = 0.88055557
+offset_left = -204.0
+offset_top = -104.0
+offset_right = 129.0
+offset_bottom = -86.0
+texture = ExtResource("27_ghhmh")
+script = ExtResource("18_ghhmh")
+drag_sound = NodePath("../../../Button2")
+drop_sound = NodePath("../../../Button")
+
+[node name="DraggableColor7" type="TextureRect" parent="TitleScreen/TextureRect" unique_id=705821258 node_paths=PackedStringArray("drag_sound", "drop_sound")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053645834
+anchor_top = 0.61203706
+anchor_right = 0.19166666
+anchor_bottom = 0.88055557
+offset_left = -411.0
+offset_top = -39.0
+offset_right = -29.0
+offset_bottom = -39.0
+texture = ExtResource("28_eh1i1")
+script = ExtResource("18_ghhmh")
+drag_sound = NodePath("../../../Button2")
+drop_sound = NodePath("../../../Button")
+
+[node name="SettingsScreen" parent="." unique_id=1249319436 node_paths=PackedStringArray("button") instance=ExtResource("19_eh1i1")]
+visible = false
+button = NodePath("../Button3")
+
+[node name="MinimalistVibes" type="AudioStreamPlayer" parent="." unique_id=511379779]
+stream = ExtResource("30_x0tpj")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
+[node name="SleepingIn" type="AudioStreamPlayer" parent="." unique_id=522147202]
+stream = ExtResource("31_w0ucp")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="Button2" type="AudioStreamPlayer" parent="." unique_id=900483554]
+stream = ExtResource("32_lx4tn")
+bus = &"SFX"
+
+[node name="Button3" type="AudioStreamPlayer" parent="." unique_id=1524397311]
+stream = ExtResource("33_h5iq3")
+bus = &"SFX"
+
+[node name="Button" type="AudioStreamPlayer" parent="." unique_id=2146397399]
+stream = ExtResource("34_ghhmh")
+bus = &"SFX"
+
+[connection signal="draw" from="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/StartButton" to="." method="_on_start_button_draw"]
+[connection signal="pressed" from="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="draw" from="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/SettingsButton" to="." method="_on_settings_button_draw"]
+[connection signal="pressed" from="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="draw" from="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/QuitButton" to="." method="_on_quit_button_draw"]
+[connection signal="pressed" from="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="gui_input" from="TitleScreen/TextureRect/DraggableColor" to="TitleScreen/TextureRect/DraggableColor" method="_on_gui_input"]
+[connection signal="gui_input" from="TitleScreen/TextureRect/DraggableColor2" to="TitleScreen/TextureRect/DraggableColor2" method="_on_gui_input"]
+[connection signal="gui_input" from="TitleScreen/TextureRect/DraggableColor3" to="TitleScreen/TextureRect/DraggableColor3" method="_on_gui_input"]
+[connection signal="gui_input" from="TitleScreen/TextureRect/DraggableColor8" to="TitleScreen/TextureRect/DraggableColor8" method="_on_gui_input"]
+[connection signal="gui_input" from="TitleScreen/TextureRect/DraggableColor4" to="TitleScreen/TextureRect/DraggableColor4" method="_on_gui_input"]
+[connection signal="gui_input" from="TitleScreen/TextureRect/DraggableColor5" to="TitleScreen/TextureRect/DraggableColor5" method="_on_gui_input"]
+[connection signal="gui_input" from="TitleScreen/TextureRect/DraggableColor6" to="TitleScreen/TextureRect/DraggableColor6" method="_on_gui_input"]
+[connection signal="gui_input" from="TitleScreen/TextureRect/DraggableColor7" to="TitleScreen/TextureRect/DraggableColor7" method="_on_gui_input"]

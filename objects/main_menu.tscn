@@ -19,6 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://ctngs0b2ak0h" path="res://assets/ui/quit_button/base.png" id="13_skomq"]
 [ext_resource type="Texture2D" uid="uid://bvtb76dp1ptek" path="res://assets/ui/quit_button/003.png" id="14_v4swv"]
 [ext_resource type="Script" uid="uid://c32u13jm8lte2" path="res://scripts/draggable.gd" id="15_lrxaj"]
+[ext_resource type="AudioStream" uid="uid://c0m278y577fii" path="res://assets/audio/minimalist_vibes.mp3" id="20_skomq"]
+[ext_resource type="AudioStream" uid="uid://bwigd44y6wdb4" path="res://assets/audio/sleeping_in.mp3" id="21_aq3ww"]
+[ext_resource type="AudioStream" uid="uid://dqcr605kxjkw3" path="res://assets/audio/button2.mp3" id="22_5uvkx"]
+[ext_resource type="AudioStream" uid="uid://d32wicbw2bacx" path="res://assets/audio/button3.mp3" id="23_b8oht"]
+[ext_resource type="AudioStream" uid="uid://irf3jfvyhang" path="res://assets/audio/button.mp3" id="24_exy7w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aq3ww"]
 animations = [{
@@ -227,7 +232,7 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("ViewportTexture_b8oht")
 
-[node name="DraggableColor" type="ColorRect" parent="TitleScreen/TextureRect" unique_id=680104866]
+[node name="DraggableColor" type="ColorRect" parent="TitleScreen/TextureRect" unique_id=680104866 node_paths=PackedStringArray("drag_sound", "drop_sound")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0625
@@ -236,8 +241,10 @@ anchor_right = 0.153125
 anchor_bottom = 0.30277777
 color = Color(0, 1, 1, 1)
 script = ExtResource("15_lrxaj")
+drag_sound = NodePath("../../../Button2")
+drop_sound = NodePath("../../../Button")
 
-[node name="DraggableColor2" type="ColorRect" parent="TitleScreen/TextureRect" unique_id=644374477]
+[node name="DraggableColor2" type="ColorRect" parent="TitleScreen/TextureRect" unique_id=644374477 node_paths=PackedStringArray("drag_sound", "drop_sound")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.14895834
@@ -247,8 +254,10 @@ anchor_bottom = 0.575
 offset_right = 6.1035156e-05
 color = Color(0.9555928, 2.4642944e-05, 0.6621623, 1)
 script = ExtResource("15_lrxaj")
+drag_sound = NodePath("../../../Button2")
+drop_sound = NodePath("../../../Button")
 
-[node name="DraggableColor3" type="ColorRect" parent="TitleScreen/TextureRect" unique_id=456660548]
+[node name="DraggableColor3" type="ColorRect" parent="TitleScreen/TextureRect" unique_id=456660548 node_paths=PackedStringArray("drag_sound", "drop_sound")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.053645834
@@ -258,9 +267,35 @@ anchor_bottom = 0.88055557
 offset_right = 3.0517578e-05
 color = Color(0.9999997, 0.8679745, 0.39927518, 1)
 script = ExtResource("15_lrxaj")
+drag_sound = NodePath("../../../Button2")
+drop_sound = NodePath("../../../Button")
 
-[node name="SettingsScreen" parent="." unique_id=1249319436 instance=ExtResource("2_c784n")]
+[node name="SettingsScreen" parent="." unique_id=1249319436 node_paths=PackedStringArray("button") instance=ExtResource("2_c784n")]
 visible = false
+button = NodePath("../Button3")
+
+[node name="MinimalistVibes" type="AudioStreamPlayer" parent="." unique_id=591684726]
+stream = ExtResource("20_skomq")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
+[node name="SleepingIn" type="AudioStreamPlayer" parent="." unique_id=322000071]
+stream = ExtResource("21_aq3ww")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="Button2" type="AudioStreamPlayer" parent="." unique_id=809647046]
+stream = ExtResource("22_5uvkx")
+bus = &"SFX"
+
+[node name="Button3" type="AudioStreamPlayer" parent="." unique_id=1599861590]
+stream = ExtResource("23_b8oht")
+bus = &"SFX"
+
+[node name="Button" type="AudioStreamPlayer" parent="." unique_id=1400035069]
+stream = ExtResource("24_exy7w")
+bus = &"SFX"
 
 [connection signal="draw" from="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/StartButton" to="." method="_on_start_button_draw"]
 [connection signal="pressed" from="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/StartButton" to="." method="_on_start_button_pressed"]
