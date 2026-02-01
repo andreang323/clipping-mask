@@ -1,6 +1,9 @@
 extends Control
 
 var game_file = load("res://objects/main_scene.tscn")
+@export var start_button : TextureButton
+@export var settings_button : TextureButton
+@export var quit_button : TextureButton
 
 func _ready() -> void:
 	$SettingsScreen.hide()
@@ -23,48 +26,48 @@ func _on_quit_button_pressed() -> void:
 # Draw button logic
 
 func _on_start_button_draw() -> void:
-	if $TitleScreen/Container/Buttons/StartButton.get_draw_mode() == 2:
-		$TitleScreen/Container/Buttons/StartButton/AnimatedSprite2D.play("default")
-	elif $TitleScreen/Container/Buttons/StartButton.get_draw_mode() == 1:
-		$TitleScreen/Container/Buttons/StartButton/AnimatedSprite2D.pause()
-		var frame = $TitleScreen/Container/Buttons/StartButton/AnimatedSprite2D.frame
-		$TitleScreen/Container/Buttons/StartButton/AnimatedSprite2D.play("pressed")
-		$TitleScreen/Container/Buttons/StartButton/AnimatedSprite2D.pause()
-		$TitleScreen/Container/Buttons/StartButton/AnimatedSprite2D.frame = frame
+	if start_button.get_draw_mode() == 2:
+		start_button.get_node("AnimatedSprite2D").play("default")
+	elif start_button.get_draw_mode() == 1:
+		start_button.get_node("AnimatedSprite2D").pause()
+		var frame = start_button.get_node("AnimatedSprite2D").frame
+		start_button.get_node("AnimatedSprite2D").play("pressed")
+		start_button.get_node("AnimatedSprite2D").pause()
+		start_button.get_node("AnimatedSprite2D").frame = frame
 	else:
-		var frame = $TitleScreen/Container/Buttons/StartButton/AnimatedSprite2D.frame
-		$TitleScreen/Container/Buttons/StartButton/AnimatedSprite2D.play("default")
-		$TitleScreen/Container/Buttons/StartButton/AnimatedSprite2D.pause()
-		$TitleScreen/Container/Buttons/StartButton/AnimatedSprite2D.frame = frame
+		var frame = start_button.get_node("AnimatedSprite2D").frame
+		start_button.get_node("AnimatedSprite2D").play("default")
+		start_button.get_node("AnimatedSprite2D").pause()
+		start_button.get_node("AnimatedSprite2D").frame = frame
 
 
 func _on_settings_button_draw() -> void:
-	if $TitleScreen/Container/Buttons/SettingsButton.get_draw_mode() == 2:
-		$TitleScreen/Container/Buttons/SettingsButton/AnimatedSprite2D.play("default")
-	elif $TitleScreen/Container/Buttons/SettingsButton.get_draw_mode() == 1:
-		$TitleScreen/Container/Buttons/SettingsButton/AnimatedSprite2D.pause()
-		var frame = $TitleScreen/Container/Buttons/SettingsButton/AnimatedSprite2D.frame
-		$TitleScreen/Container/Buttons/SettingsButton/AnimatedSprite2D.play("pressed")
-		$TitleScreen/Container/Buttons/SettingsButton/AnimatedSprite2D.pause()
-		$TitleScreen/Container/Buttons/SettingsButton/AnimatedSprite2D.frame = frame
+	if settings_button.get_draw_mode() == 2:
+		settings_button.get_node("AnimatedSprite2D").play("default")
+	elif settings_button.get_draw_mode() == 1:
+		settings_button.get_node("AnimatedSprite2D").pause()
+		var frame = settings_button.get_node("AnimatedSprite2D").frame
+		settings_button.get_node("AnimatedSprite2D").play("pressed")
+		settings_button.get_node("AnimatedSprite2D").pause()
+		settings_button.get_node("AnimatedSprite2D").frame = frame
 	else:
-		var frame = $TitleScreen/Container/Buttons/SettingsButton/AnimatedSprite2D.frame
-		$TitleScreen/Container/Buttons/SettingsButton/AnimatedSprite2D.play("default")
-		$TitleScreen/Container/Buttons/SettingsButton/AnimatedSprite2D.pause()
-		$TitleScreen/Container/Buttons/SettingsButton/AnimatedSprite2D.frame = frame
+		var frame = settings_button.get_node("AnimatedSprite2D").frame
+		settings_button.get_node("AnimatedSprite2D").play("default")
+		settings_button.get_node("AnimatedSprite2D").pause()
+		settings_button.get_node("AnimatedSprite2D").frame = frame
 
 
 func _on_quit_button_draw() -> void:
-	if $TitleScreen/Container/Buttons/QuitButton.get_draw_mode() == 2:
-		$TitleScreen/Container/Buttons/QuitButton/AnimatedSprite2D.play("default")
-	elif $TitleScreen/Container/Buttons/QuitButton.get_draw_mode() == 1:
-		$TitleScreen/Container/Buttons/QuitButton/AnimatedSprite2D.pause()
-		var frame = $TitleScreen/Container/Buttons/QuitButton/AnimatedSprite2D.frame
-		$TitleScreen/Container/Buttons/QuitButton/AnimatedSprite2D.play("pressed")
-		$TitleScreen/Container/Buttons/QuitButton/AnimatedSprite2D.pause()
-		$TitleScreen/Container/Buttons/QuitButton/AnimatedSprite2D.frame = frame
+	if quit_button.get_draw_mode() == 2:
+		quit_button.get_node("AnimatedSprite2D").play("default")
+	elif quit_button.get_draw_mode() == 1:
+		quit_button.get_node("AnimatedSprite2D").pause()
+		var frame = quit_button.get_node("AnimatedSprite2D").frame
+		quit_button.get_node("AnimatedSprite2D").play("pressed")
+		quit_button.get_node("AnimatedSprite2D").pause()
+		quit_button.get_node("AnimatedSprite2D").frame = frame
 	else:
-		var frame = $TitleScreen/Container/Buttons/QuitButton/AnimatedSprite2D.frame
-		$TitleScreen/Container/Buttons/QuitButton/AnimatedSprite2D.play("default")
-		$TitleScreen/Container/Buttons/QuitButton/AnimatedSprite2D.pause()
-		$TitleScreen/Container/Buttons/QuitButton/AnimatedSprite2D.frame = frame
+		var frame = quit_button.get_node("AnimatedSprite2D").frame
+		quit_button.get_node("AnimatedSprite2D").play("default")
+		quit_button.get_node("AnimatedSprite2D").pause()
+		quit_button.get_node("AnimatedSprite2D").frame = frame

@@ -3,21 +3,24 @@
 [ext_resource type="Script" uid="uid://cdmrkxtxroclr" path="res://scripts/main_menu.gd" id="1_c784n"]
 [ext_resource type="PackedScene" uid="uid://vv1kw068vm8x" path="res://objects/settings_screen.tscn" id="2_c784n"]
 [ext_resource type="Texture2D" uid="uid://dgf0nqb6hfqsw" path="res://assets/ui/play_button/000.png" id="2_l3dyn"]
+[ext_resource type="Texture2D" uid="uid://ncweb5euywrp" path="res://assets/ui/play_button/base.png" id="3_0wy8k"]
 [ext_resource type="Texture2D" uid="uid://dwei50rpuvfvt" path="res://assets/ui/play_button/002.png" id="3_4s4y6"]
 [ext_resource type="Texture2D" uid="uid://b8otn7wn24jg" path="res://assets/ui/play_button/003.png" id="4_38fb3"]
 [ext_resource type="Texture2D" uid="uid://bjtuj3ie20xn8" path="res://assets/ui/settings_button/000.png" id="5_jwlo5"]
 [ext_resource type="Texture2D" uid="uid://d3vj8ubacbdrq" path="res://assets/ui/play_button/001.png" id="6_4s4y6"]
 [ext_resource type="Texture2D" uid="uid://b5dk00xjdvotf" path="res://assets/ui/settings_button/002.png" id="6_46ksy"]
 [ext_resource type="Texture2D" uid="uid://cwhjntv1iwsw" path="res://assets/ui/quit_button/000.png" id="7_1m87u"]
+[ext_resource type="Texture2D" uid="uid://sjv3bcew2b47" path="res://assets/ui/settings_button/base.png" id="8_bsaje"]
 [ext_resource type="Texture2D" uid="uid://duih24df4gg5d" path="res://assets/ui/quit_button/001.png" id="8_lrxaj"]
 [ext_resource type="Texture2D" uid="uid://ciukyrmby4nm1" path="res://assets/ui/settings_button/001.png" id="9_1m87u"]
 [ext_resource type="Texture2D" uid="uid://c2xnc88qjad56" path="res://assets/ui/temp_logo.png" id="9_6tefk"]
 [ext_resource type="Texture2D" uid="uid://bsydcrall4abl" path="res://assets/ui/settings_button/003.png" id="10_lrxaj"]
 [ext_resource type="Texture2D" uid="uid://cs04jf7lmy36w" path="res://assets/ui/quit_button/002.png" id="13_6tefk"]
+[ext_resource type="Texture2D" uid="uid://ctngs0b2ak0h" path="res://assets/ui/quit_button/base.png" id="13_skomq"]
 [ext_resource type="Texture2D" uid="uid://bvtb76dp1ptek" path="res://assets/ui/quit_button/003.png" id="14_v4swv"]
 [ext_resource type="Script" uid="uid://c32u13jm8lte2" path="res://scripts/draggable.gd" id="15_lrxaj"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_38fb3"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_aq3ww"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -42,7 +45,7 @@ animations = [{
 "speed": 0.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0wy8k"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ff2mm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -67,7 +70,7 @@ animations = [{
 "speed": 0.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bsaje"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_5uvkx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -92,13 +95,10 @@ animations = [{
 "speed": 0.0
 }]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1m87u"]
-blend_mode = 3
+[sub_resource type="ViewportTexture" id="ViewportTexture_b8oht"]
+viewport_path = NodePath("TitleScreen/SubViewportContainer/SubViewport")
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lrxaj"]
-blend_mode = 3
-
-[node name="MainMenu" type="Control" unique_id=2099778462]
+[node name="MainMenu" type="Control" unique_id=2099778462 node_paths=PackedStringArray("start_button", "settings_button", "quit_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,6 +106,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c784n")
+start_button = NodePath("TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/StartButton")
+settings_button = NodePath("TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/SettingsButton")
+quit_button = NodePath("TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/QuitButton")
 
 [node name="TitleScreen" type="CanvasLayer" parent="." unique_id=1847175845]
 metadata/_edit_use_anchors_ = true
@@ -118,7 +121,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Container" type="VBoxContainer" parent="TitleScreen" unique_id=1285907957]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="TitleScreen" unique_id=1087473669]
+offset_right = 4096.0
+offset_bottom = 2048.0
+
+[node name="SubViewport" type="SubViewport" parent="TitleScreen/SubViewportContainer" unique_id=1394838386]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Container" type="VBoxContainer" parent="TitleScreen/SubViewportContainer/SubViewport" unique_id=961040009]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -131,66 +144,65 @@ offset_bottom = 485.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Logo" type="TextureRect" parent="TitleScreen/Container" unique_id=2034780504]
+[node name="Logo" type="TextureRect" parent="TitleScreen/SubViewportContainer/SubViewport/Container" unique_id=420258007]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("9_6tefk")
 stretch_mode = 2
 
-[node name="Buttons" type="VBoxContainer" parent="TitleScreen/Container" unique_id=660934987]
+[node name="Buttons" type="VBoxContainer" parent="TitleScreen/SubViewportContainer/SubViewport/Container" unique_id=2018520227]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="StartButton" type="TextureButton" parent="TitleScreen/Container/Buttons" unique_id=1381881257]
+[node name="StartButton" type="TextureButton" parent="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons" unique_id=1868862350]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-texture_normal = ExtResource("2_l3dyn")
-texture_pressed = ExtResource("3_4s4y6")
-texture_hover = ExtResource("2_l3dyn")
-texture_disabled = ExtResource("4_38fb3")
+texture_normal = ExtResource("3_0wy8k")
+texture_pressed = ExtResource("3_0wy8k")
+texture_hover = ExtResource("3_0wy8k")
+texture_disabled = ExtResource("3_0wy8k")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TitleScreen/Container/Buttons/StartButton" unique_id=1715097385]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/StartButton" unique_id=1555631260]
 position = Vector2(152, 74)
-sprite_frames = SubResource("SpriteFrames_38fb3")
+sprite_frames = SubResource("SpriteFrames_aq3ww")
 
-[node name="SettingsButton" type="TextureButton" parent="TitleScreen/Container/Buttons" unique_id=788931496]
+[node name="SettingsButton" type="TextureButton" parent="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons" unique_id=1837725474]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-texture_normal = ExtResource("5_jwlo5")
-texture_pressed = ExtResource("6_46ksy")
-texture_hover = ExtResource("5_jwlo5")
-texture_disabled = ExtResource("6_46ksy")
+texture_normal = ExtResource("8_bsaje")
+texture_pressed = ExtResource("8_bsaje")
+texture_hover = ExtResource("8_bsaje")
+texture_disabled = ExtResource("8_bsaje")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TitleScreen/Container/Buttons/SettingsButton" unique_id=1897990218]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/SettingsButton" unique_id=1566297609]
 position = Vector2(260.5, 77.5)
-sprite_frames = SubResource("SpriteFrames_0wy8k")
+sprite_frames = SubResource("SpriteFrames_ff2mm")
 
-[node name="QuitButton" type="TextureButton" parent="TitleScreen/Container/Buttons" unique_id=400675202]
+[node name="QuitButton" type="TextureButton" parent="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons" unique_id=1269944750]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-texture_normal = ExtResource("7_1m87u")
-texture_pressed = ExtResource("8_lrxaj")
-texture_hover = ExtResource("7_1m87u")
-texture_disabled = ExtResource("8_lrxaj")
+texture_normal = ExtResource("13_skomq")
+texture_pressed = ExtResource("13_skomq")
+texture_hover = ExtResource("13_skomq")
+texture_disabled = ExtResource("13_skomq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TitleScreen/Container/Buttons/QuitButton" unique_id=1842011107]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/QuitButton" unique_id=567083770]
 position = Vector2(159, 80)
-sprite_frames = SubResource("SpriteFrames_bsaje")
+sprite_frames = SubResource("SpriteFrames_5uvkx")
 
-[node name="ColorRect2" type="ColorRect" parent="TitleScreen" unique_id=904894012]
+[node name="ColorRect2" type="ColorRect" parent="TitleScreen/SubViewportContainer/SubViewport" unique_id=521977640]
 anchors_preset = -1
 anchor_left = 0.04375
 anchor_top = 0.075
 anchor_right = 0.28125
 anchor_bottom = 0.912963
-metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="TitleScreen" unique_id=538571608]
+[node name="Label" type="Label" parent="TitleScreen/SubViewportContainer/SubViewport" unique_id=1490546659]
 offset_left = 1403.0
 offset_top = 277.0
 offset_right = 1863.0
@@ -205,8 +217,18 @@ completed when
 all objects have
 a color."
 
-[node name="DraggableColor" type="ColorRect" parent="TitleScreen" unique_id=1298865877]
-material = SubResource("CanvasItemMaterial_1m87u")
+[node name="TextureRect" type="TextureRect" parent="TitleScreen" unique_id=107371806]
+clip_children = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("ViewportTexture_b8oht")
+
+[node name="DraggableColor" type="ColorRect" parent="TitleScreen/TextureRect" unique_id=680104866]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0625
 anchor_top = 0.11111111
@@ -214,39 +236,38 @@ anchor_right = 0.153125
 anchor_bottom = 0.30277777
 color = Color(0, 1, 1, 1)
 script = ExtResource("15_lrxaj")
-metadata/_edit_use_anchors_ = true
 
-[node name="DraggableColor2" type="ColorRect" parent="TitleScreen" unique_id=1167611810]
-material = SubResource("CanvasItemMaterial_lrxaj")
+[node name="DraggableColor2" type="ColorRect" parent="TitleScreen/TextureRect" unique_id=644374477]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.14895834
 anchor_top = 0.3314815
 anchor_right = 0.26822916
 anchor_bottom = 0.575
+offset_right = 6.1035156e-05
 color = Color(0.9555928, 2.4642944e-05, 0.6621623, 1)
 script = ExtResource("15_lrxaj")
-metadata/_edit_use_anchors_ = true
 
-[node name="DraggableColor3" type="ColorRect" parent="TitleScreen" unique_id=1921114922]
-material = SubResource("CanvasItemMaterial_lrxaj")
+[node name="DraggableColor3" type="ColorRect" parent="TitleScreen/TextureRect" unique_id=456660548]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.053645834
 anchor_top = 0.61203706
 anchor_right = 0.19166666
 anchor_bottom = 0.88055557
+offset_right = 3.0517578e-05
 color = Color(0.9999997, 0.8679745, 0.39927518, 1)
 script = ExtResource("15_lrxaj")
-metadata/_edit_use_anchors_ = true
 
 [node name="SettingsScreen" parent="." unique_id=1249319436 instance=ExtResource("2_c784n")]
 visible = false
 
-[connection signal="draw" from="TitleScreen/Container/Buttons/StartButton" to="." method="_on_start_button_draw"]
-[connection signal="pressed" from="TitleScreen/Container/Buttons/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="draw" from="TitleScreen/Container/Buttons/SettingsButton" to="." method="_on_settings_button_draw"]
-[connection signal="pressed" from="TitleScreen/Container/Buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="draw" from="TitleScreen/Container/Buttons/QuitButton" to="." method="_on_quit_button_draw"]
-[connection signal="pressed" from="TitleScreen/Container/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="gui_input" from="TitleScreen/DraggableColor" to="TitleScreen/DraggableColor" method="_on_gui_input"]
-[connection signal="gui_input" from="TitleScreen/DraggableColor2" to="TitleScreen/DraggableColor2" method="_on_gui_input"]
-[connection signal="gui_input" from="TitleScreen/DraggableColor3" to="TitleScreen/DraggableColor3" method="_on_gui_input"]
+[connection signal="draw" from="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/StartButton" to="." method="_on_start_button_draw"]
+[connection signal="pressed" from="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="draw" from="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/SettingsButton" to="." method="_on_settings_button_draw"]
+[connection signal="pressed" from="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="draw" from="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/QuitButton" to="." method="_on_quit_button_draw"]
+[connection signal="pressed" from="TitleScreen/SubViewportContainer/SubViewport/Container/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="gui_input" from="TitleScreen/TextureRect/DraggableColor" to="TitleScreen/TextureRect/DraggableColor" method="_on_gui_input"]
+[connection signal="gui_input" from="TitleScreen/TextureRect/DraggableColor2" to="TitleScreen/TextureRect/DraggableColor2" method="_on_gui_input"]
+[connection signal="gui_input" from="TitleScreen/TextureRect/DraggableColor3" to="TitleScreen/TextureRect/DraggableColor3" method="_on_gui_input"]
