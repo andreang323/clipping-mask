@@ -5,10 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://hgjouu5xi2jr" path="res://levels/room2/room2.tscn" id="3_co6oc"]
 [ext_resource type="PackedScene" path="res://levels/room3/room_3.tscn" id="4_4rtpw"]
 [ext_resource type="PackedScene" uid="uid://dud5seoxkuo02" path="res://levels/room4/room4.tscn" id="5_r2qrm"]
+[ext_resource type="PackedScene" path="res://levels/room5/room5.tscn" id="6_kewpi"]
 
 [node name="MainScene" type="Node2D" unique_id=2025330535]
 script = ExtResource("1_qqab8")
 rooms = Array[Resource]([ExtResource("2_a8md5"), ExtResource("3_co6oc"), ExtResource("4_4rtpw"), ExtResource("5_r2qrm")])
+final_room = ExtResource("6_kewpi")
 
 [node name="Rooms" type="Node2D" parent="." unique_id=532198741]
 
