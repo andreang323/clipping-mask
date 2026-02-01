@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://bk8dvgu8bfasp"]
 
 [ext_resource type="Script" uid="uid://dqqgc5dmtdnxg" path="res://scripts/main_scene.gd" id="1_qqab8"]
+[ext_resource type="PackedScene" uid="uid://d0dwe2bbpg4w" path="res://levels/room1/room1.tscn" id="2_a8md5"]
+[ext_resource type="PackedScene" uid="uid://waramubiekh0" path="res://objects/room_template.tscn" id="2_nokvr"]
+[ext_resource type="PackedScene" uid="uid://hgjouu5xi2jr" path="res://levels/room2/room2.tscn" id="3_co6oc"]
+[ext_resource type="PackedScene" path="res://levels/room3/room_3.tscn" id="4_4rtpw"]
+[ext_resource type="PackedScene" path="res://levels/room5/room5.tscn" id="6_kewpi"]
 
 [node name="MainScene" type="Node2D" unique_id=2025330535]
 script = ExtResource("1_qqab8")
+rooms = Array[Resource]([ExtResource("2_a8md5"), ExtResource("3_co6oc"), ExtResource("4_4rtpw"), ExtResource("2_nokvr"), ExtResource("6_kewpi")])
 
 [node name="Rooms" type="Node2D" parent="." unique_id=532198741]
 

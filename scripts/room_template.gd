@@ -6,7 +6,7 @@ class_name Room
 @export var background: Sprite2D
 @export var sound : AudioStreamPlayer
 ## Size of the room. Needed for autopopulation if used.
-var room_size : Vector2 = Vector2(1080, 1080)
+var room_size : Vector2 = Vector2(1980, 1080)
 ## Emitted when room complete.
 signal room_complete()
 

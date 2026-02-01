@@ -5,7 +5,8 @@ extends Node2D
 ## Number of rooms in a row.
 var x_limit = 5
 ## Rooms to instantiate.
-var rooms = ["res://objects/room_template.tscn", "res://objects/room_template.tscn","res://objects/room_template.tscn","res://objects/room_template.tscn", "res://objects/room_template.tscn","res://objects/room_template.tscn","res://objects/room_template.tscn", "res://objects/room_template.tscn","res://objects/room_template.tscn","res://objects/room_template.tscn", "res://objects/room_template.tscn","res://objects/room_template.tscn","res://objects/room_template.tscn", "res://objects/room_template.tscn","res://objects/room_template.tscn","res://objects/room_template.tscn", "res://objects/room_template.tscn","res://objects/room_template.tscn","res://objects/room_template.tscn"]
+# var rooms = ["res://objects/room_template.tscn", "res://objects/room_template.tscn","res://objects/room_template.tscn","res://objects/room_template.tscn", "res://objects/room_template.tscn","res://objects/room_template.tscn","res://objects/room_template.tscn", "res://objects/room_template.tscn","res://objects/room_template.tscn","res://objects/room_template.tscn", "res://objects/room_template.tscn","res://objects/room_template.tscn","res://objects/room_template.tscn", "res://objects/room_template.tscn","res://objects/room_template.tscn","res://objects/room_template.tscn", "res://objects/room_template.tscn","res://objects/room_template.tscn","res://objects/room_template.tscn"]
+@export var rooms: Array[Resource]
 ## Position of first room.
 var base_location = Vector2(540, 960)
 
@@ -20,7 +21,7 @@ func _ready() -> void:
 		for x in range(0, len(rooms)):
 			
 			# Instance room.
-			var roomInstance: Room = load(rooms[x]).instantiate()
+			var roomInstance: Room = rooms[x].instantiate()
 			
 			# Offset position by half of room.
 			if x_counter == 0:
