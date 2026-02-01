@@ -20,6 +20,108 @@
 [ext_resource type="Texture2D" uid="uid://dfnaf48pjmmun" path="res://levels/room2/sprites/small_shapes/007.png" id="17_b76fy"]
 [ext_resource type="Texture2D" uid="uid://c0gmku2f4sqnk" path="res://levels/room2/sprites/small_shapes/0010.png" id="18_w5lh4"]
 [ext_resource type="AudioStream" uid="uid://bx0iu4jk8v6ay" path="res://assets/audio/marimba.mp3" id="20_pnbfm"]
+[ext_resource type="Texture2D" uid="uid://qu0gkkp8y5bn" path="res://levels/cat/000.png" id="21_54nya"]
+[ext_resource type="Texture2D" uid="uid://c88h4duqwtnn5" path="res://levels/cat/001.png" id="22_6cuco"]
+[ext_resource type="Texture2D" uid="uid://b1sxq8ixk8g0m" path="res://levels/cat/002.png" id="23_b76fy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w5lh4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_54nya")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_6cuco")
+}],
+"loop": false,
+"name": &"scared",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_b76fy")
+}],
+"loop": false,
+"name": &"sleep",
+"speed": 0.0
+}]
+
+[sub_resource type="Animation" id="Animation_c5uie"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(286, 30)]
+}
+
+[sub_resource type="Animation" id="Animation_flh4e"]
+resource_name = "spooked"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.33333334, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(286, 30), Vector2(286, -20), Vector2(286, 30), Vector2(305, -269), Vector2(628, -404), Vector2(1167, -458)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"sleep", &"scared"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(-0.5, 0.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_205kr"]
+_data = {
+&"RESET": SubResource("Animation_c5uie"),
+&"spooked": SubResource("Animation_flh4e")
+}
 
 [node name="Room2" type="Node2D" unique_id=2029889854 node_paths=PackedStringArray("background", "sound")]
 script = ExtResource("1_34xmr")
@@ -307,6 +409,16 @@ position = Vector2(0, 0)
 [node name="Marimba" type="AudioStreamPlayer" parent="." unique_id=2037246357]
 stream = ExtResource("20_pnbfm")
 bus = &"SFX"
+
+[node name="Cat" type="AnimatedSprite2D" parent="." unique_id=2079570444]
+z_index = 2
+position = Vector2(286, 30)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_w5lh4")
+animation = &"sleep"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cat" unique_id=687093786]
+libraries/ = SubResource("AnimationLibrary_205kr")
 
 [editable path="Potion9"]
 [editable path="Potion10"]
