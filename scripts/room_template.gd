@@ -12,7 +12,7 @@ var complete = false
 func room_finished():
 	room_complete.emit()
 
-func color_received():
+func color_received(_id):
 	for receiver in get_tree().get_nodes_in_group("Receivers"):
 		if !receiver.correct:
 			return

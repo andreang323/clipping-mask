@@ -7,6 +7,10 @@ var correct = false
 var answer : int = -1
 signal color_received(color: COLORTYPES)
 
+## Automatically connects color_received signal to parent
+func _ready() -> void:
+	color_received.connect(get_parent().color_received)
+
 func _on_area_entered(area: Area2D) -> void:
 	if area is ColorDrag:
 		await area.drag_ended

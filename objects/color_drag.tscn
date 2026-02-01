@@ -1,11 +1,38 @@
 [gd_scene format=3 uid="uid://jmiepmoej4kg"]
 
 [ext_resource type="Script" uid="uid://dure3in8hxjjf" path="res://color.gd" id="1_fmtob"]
+[ext_resource type="Texture2D" uid="uid://bh7aop0y38nad" path="res://assets/ui/particle_effects.png" id="2_fmtob"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_55ksx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1quxe"]
 size = Vector2(232, 171)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_56vdb"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 4
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_cpkg8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.013837457), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_jbbof"]
+curve = SubResource("Curve_cpkg8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s8qw6"]
+particle_flag_disable_z = true
+angle_min = -89.99999
+angle_max = 90.000015
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 150.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 299.99997
+gravity = Vector3(0, 400, 0)
+alpha_curve = SubResource("CurveTexture_jbbof")
+anim_offset_max = 1.0
 
 [node name="Color" type="Area2D" unique_id=1426723397]
 script = ExtResource("1_fmtob")
@@ -13,6 +40,17 @@ script = ExtResource("1_fmtob")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=68830278]
 material = SubResource("ShaderMaterial_55ksx")
 shape = SubResource("RectangleShape2D_1quxe")
+
+[node name="Particles" type="GPUParticles2D" parent="." unique_id=1701321061]
+z_index = 900
+material = SubResource("CanvasItemMaterial_56vdb")
+emitting = false
+amount = 20
+texture = ExtResource("2_fmtob")
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource("ParticleProcessMaterial_s8qw6")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

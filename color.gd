@@ -6,6 +6,8 @@ var drag = false
 var mouse_offset = Vector2(0,0)
 signal drag_ended
 
+@export var particle_color : Color
+
 enum COLORTYPES{BLACK, RED, GREEN, YELLOW, BLUE, PURPLE, ORANGE}
 # variable to check against receiver's desired ids
 @export var id : COLORTYPES
@@ -33,4 +35,6 @@ func _on_mouse_exited() -> void:
 	mouse_in = false
 
 func disable():
+	$Particles.modulate = particle_color
+	$Particles.emitting = true
 	set_deferred("input_pickable", false)
