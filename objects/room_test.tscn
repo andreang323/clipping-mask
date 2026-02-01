@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dhfxymiomntt0"]
+
+[ext_resource type="Script" uid="uid://524yva3w0xf3" path="res://scripts/room_template.gd" id="1_4rogm"]
+[ext_resource type="Texture2D" uid="uid://c7g5ge25kq16q" path="res://icon.svg" id="2_1quxe"]
+[ext_resource type="Texture2D" uid="uid://bcmkahusfwrcl" path="res://testing_levels/Mask.png" id="2_kwpop"]
+[ext_resource type="PackedScene" uid="uid://c0gjg6cvalg8o" path="res://objects/receiver.tscn" id="4_i4wjd"]
+[ext_resource type="Material" uid="uid://cj6k83vu3refr" path="res://objects/mask_shader.tres" id="5_2dxcu"]
+[ext_resource type="PackedScene" uid="uid://jmiepmoej4kg" path="res://objects/color_drag.tscn" id="5_i4wjd"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wgebg"]
+viewport_path = NodePath("SubViewportContainer/SubViewport")
+
+[node name="Room" type="Node2D" unique_id=1362833908]
+script = ExtResource("1_4rogm")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=500646063]
+offset_right = 4096.0
+offset_bottom = 2048.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1335701914]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Mask" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=1788167460]
+position = Vector2(868, 399)
+texture = ExtResource("2_kwpop")
+
+[node name="Mask2" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=1905475220]
+position = Vector2(655, 661)
+texture = ExtResource("2_kwpop")
+
+[node name="Mask3" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=235555089]
+position = Vector2(465, 363)
+texture = ExtResource("2_kwpop")
+
+[node name="Placeholder" type="Sprite2D" parent="." unique_id=777284560]
+scale = Vector2(8.031, 8.031)
+texture = ExtResource("2_1quxe")
+
+[node name="Receiver" parent="." unique_id=666436468 instance=ExtResource("4_i4wjd")]
+position = Vector2(881, 406)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=731194022]
+
+[node name="Color" parent="CanvasGroup" unique_id=1426723397 instance=ExtResource("5_i4wjd")]
+position = Vector2(648, 698)
+
+[node name="MatchingTexture" type="Sprite2D" parent="CanvasGroup" unique_id=539181209]
+material = ExtResource("5_2dxcu")
+position = Vector2(960, 540)
+texture = SubResource("ViewportTexture_wgebg")
