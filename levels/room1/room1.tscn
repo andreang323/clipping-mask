@@ -2,24 +2,20 @@
 
 [ext_resource type="Script" uid="uid://by1etgn0kcsnf" path="res://levels/room1/room1.gd" id="1_w7pcf"]
 [ext_resource type="Texture2D" uid="uid://babv8c84ngway" path="res://levels/room1/sprites/room1.png" id="2_w7pcf"]
-[ext_resource type="PackedScene" path="res://objects/receiver.tscn" id="3_66tix"]
 [ext_resource type="PackedScene" path="res://objects/color_drag.tscn" id="4_a4g6i"]
 [ext_resource type="Texture2D" uid="uid://cnfsugdrjlcic" path="res://levels/room1/sprites/moon.png" id="5_66tix"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4g6k6"]
 size = Vector2(175.25, 188)
 
-[node name="Room1" type="Node2D" unique_id=1074964609]
+[node name="Room1" type="Node2D" unique_id=1074964609 node_paths=PackedStringArray("background")]
 script = ExtResource("1_w7pcf")
+background = NodePath("Background")
 metadata/_custom_type_script = "uid://524yva3w0xf3"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1059298015]
 z_index = 1
 texture = ExtResource("2_w7pcf")
-
-[node name="LightChecker" parent="." unique_id=666436468 groups=["Receivers"] instance=ExtResource("3_66tix")]
-position = Vector2(17, -120)
-answers = Array[int]([3])
 
 [node name="Moon" parent="." unique_id=1426723397 groups=["Colors"] instance=ExtResource("4_a4g6i")]
 position = Vector2(688, -241)
@@ -32,9 +28,5 @@ shape = SubResource("RectangleShape2D_4g6k6")
 [node name="Background1Color1" type="Sprite2D" parent="Moon" unique_id=1542750487]
 position = Vector2(37, -31)
 texture = ExtResource("5_66tix")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1124023388]
-
-[connection signal="color_received" from="LightChecker" to="." method="color_received"]
 
 [editable path="Moon"]

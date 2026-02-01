@@ -5,7 +5,7 @@ enum COLORTYPES{BLACK, RED, GREEN, YELLOW, BLUE, PURPLE, ORANGE}
 @export var answers : Array[int] = []
 var correct = false
 var answer : int = -1
-signal color_received
+signal color_received(color: COLORTYPES)
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is ColorDrag:
@@ -16,6 +16,6 @@ func _on_area_entered(area: Area2D) -> void:
 			answer = area.id
 		if answer in answers:
 			correct = true
-			color_received.emit()
+			color_received.emit(area.id)
 		else:
 			correct = false
