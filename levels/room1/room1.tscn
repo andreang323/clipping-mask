@@ -35,6 +35,16 @@ color = Color(0, 0, 0, 1)
 position = Vector2(14, -121)
 answers = Array[int]([3])
 
+[node name="GemCloud" parent="." unique_id=437396060 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("4_a4g6i")]
+position = Vector2(702, -286)
+particle_color = Color(0.20784314, 0.6392157, 0.9529412, 1)
+auto_shape = false
+id = 4
+sprite = NodePath("Cloud")
+
+[node name="Cloud" type="Sprite2D" parent="GemCloud" unique_id=430897550]
+texture = ExtResource("6_8cty6")
+
 [node name="Moon" parent="." unique_id=1426723397 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("4_a4g6i")]
 position = Vector2(682, -239)
 particle_color = Color(1, 0.7607843, 0, 1)
@@ -58,16 +68,6 @@ process_mode = 4
 position = Vector2(15, 293)
 answers = Array[int]([4])
 
-[node name="GemCloud" parent="." unique_id=437396060 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("4_a4g6i")]
-position = Vector2(700, -159)
-particle_color = Color(0.20784314, 0.6392157, 0.9529412, 1)
-auto_shape = false
-id = 4
-sprite = NodePath("Cloud")
-
-[node name="Cloud" type="Sprite2D" parent="GemCloud" unique_id=430897550]
-texture = ExtResource("6_8cty6")
-
 [node name="Marimba" type="AudioStreamPlayer" parent="." unique_id=1433165376]
 stream = ExtResource("7_8cty6")
 bus = &"SFX"
@@ -75,5 +75,5 @@ bus = &"SFX"
 [connection signal="color_received" from="LightChecker" to="." method="_on_light_checker_color_received"]
 [connection signal="color_received" from="GemChecker" to="." method="_on_gem_checker_color_received"]
 
-[editable path="Moon"]
 [editable path="GemCloud"]
+[editable path="Moon"]
