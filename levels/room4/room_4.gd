@@ -31,26 +31,36 @@ func enter_room(room_id_transition: int) -> void:
 			GlobalFlags.room4_data.cat_anim_played = true
 
 func _on_bird_complete(_color) -> void:
-	for receiver in bird_receivers:
-		if !receiver.correct:
-			return
-	$BirdFlying.visible = true
-	$BirdFlying/AnimationPlayer.play("escape")
+	if !bird_free:
+		for receiver in bird_receivers:
+			if !receiver.correct:
+				return
+		
+		for colordrag in get_tree().get_nodes_in_group("Colors"):
+			if colordrag.name != "ColorKey":
+				colordrag.hide()
+				
+		bird_free = true
+		$BirdFlying.visible = true
+		$BirdFlying/AnimationPlayer.play("escape")
 
-	if key_free:
-		$Sprite2D.texture = free_bird_texture
-	else:
-		$Sprite2D.texture = free_bird_yes_key_texture
+		if key_free:
+			$Sprite2D.texture = free_bird_texture
+		else:
+			$Sprite2D.texture = free_bird_yes_key_texture
 
 func _on_receiver_key_color_received(_color: Receiver.COLORTYPES) -> void:
-	$Key.visible = true
-	$Ding.play()
-	$Key/AnimationPlayer.play("get_key")
-	key_color.visible = false
-	GlobalFlags.key_obtained.emit()
-	GlobalFlags.room4_data.key_obtained = true
+	if !key_free:
+		key_free = true
+		$Key.visible = true
+		$Ding.play()
+		$Key/AnimationPlayer.play("get_key")
+		key_color.visible = false
+		GlobalFlags.key_obtained.emit()
+		GlobalFlags.room4_data.key_obtained = true
 
-	if bird_free:
-		$Sprite2D.texture = free_bird_texture
-	else:
-		$Sprite2D.texture = free_key_texture
+		if bird_free:
+			$Sprite2D.texture = free_bird_texture
+		else:
+			$Sprite2D.texture = free_key_texture
+		
