@@ -1,12 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://vv1kw068vm8x"]
+[gd_scene format=3 uid="uid://vv1kw068vm8x"]
 
 [ext_resource type="Script" uid="uid://bnb5fv2dmph8t" path="res://scripts/settings_screen.gd" id="1_onfb1"]
+[ext_resource type="Texture2D" uid="uid://bflj40d5g581n" path="res://assets/ui/slider/grabber.png" id="2_vjs1s"]
+[ext_resource type="Texture2D" uid="uid://cb3wbcno7xxs3" path="res://assets/ui/slider/001.png" id="3_jutrf"]
+[ext_resource type="Texture2D" uid="uid://dbs8jb1bjg4y1" path="res://assets/ui/slider/000.png" id="4_o2gsu"]
+[ext_resource type="Texture2D" uid="uid://u4i3n8sjsknf" path="res://assets/ui/check_button/000.png" id="5_jutrf"]
 
-[node name="SettingsScreen" type="CanvasLayer"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_spmhg"]
+texture = ExtResource("3_jutrf")
+texture_margin_top = 56.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_260it"]
+texture = ExtResource("4_o2gsu")
+axis_stretch_horizontal = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o2gsu"]
+load_path = "res://.godot/imported/grabber.png-bd28819150b1f710b5bfdded05c80e11.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_spmhg"]
+load_path = "res://.godot/imported/001.png-6935b9e05040cdd96801d5725eccf099.ctex"
+
+[node name="SettingsScreen" type="CanvasLayer" unique_id=1831264791]
 script = ExtResource("1_onfb1")
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1542934872]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,7 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="SettingsMenu" type="VBoxContainer" parent="."]
+[node name="SettingsMenu" type="VBoxContainer" parent="." unique_id=686208550]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -29,101 +47,125 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Label" type="Label" parent="SettingsMenu"]
+[node name="Label" type="Label" parent="SettingsMenu" unique_id=587135246]
 layout_mode = 2
 theme_override_font_sizes/font_size = 150
 text = "SETTINGS"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu" unique_id=1433611859]
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="Options" type="VBoxContainer" parent="SettingsMenu/HBoxContainer"]
+[node name="Options" type="VBoxContainer" parent="SettingsMenu/HBoxContainer" unique_id=981425285]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 20
+theme_override_constants/separation = 5
 
-[node name="MasterLabel" type="Label" parent="SettingsMenu/HBoxContainer/Options"]
+[node name="MasterLabel" type="Label" parent="SettingsMenu/HBoxContainer/Options" unique_id=1904478004]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "MASTER"
 
-[node name="MasterSlider" type="HSlider" parent="SettingsMenu/HBoxContainer/Options"]
+[node name="MasterSlider" type="HSlider" parent="SettingsMenu/HBoxContainer/Options" unique_id=150088734]
 layout_mode = 2
 focus_mode = 0
+theme_override_icons/grabber = ExtResource("2_vjs1s")
+theme_override_icons/grabber_highlight = ExtResource("2_vjs1s")
+theme_override_icons/grabber_disabled = ExtResource("2_vjs1s")
+theme_override_styles/slider = SubResource("StyleBoxTexture_spmhg")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_260it")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_260it")
 max_value = 1.0
 step = 0.01
 
-[node name="MusicLabel" type="Label" parent="SettingsMenu/HBoxContainer/Options"]
+[node name="MusicLabel" type="Label" parent="SettingsMenu/HBoxContainer/Options" unique_id=977998581]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "MUSIC"
 
-[node name="MusicSlider" type="HSlider" parent="SettingsMenu/HBoxContainer/Options"]
+[node name="MusicSlider" type="HSlider" parent="SettingsMenu/HBoxContainer/Options" unique_id=1684434251]
 layout_mode = 2
 focus_mode = 0
+theme_override_icons/grabber = SubResource("CompressedTexture2D_o2gsu")
+theme_override_icons/grabber_highlight = SubResource("CompressedTexture2D_o2gsu")
+theme_override_icons/grabber_disabled = SubResource("CompressedTexture2D_o2gsu")
+theme_override_styles/slider = SubResource("StyleBoxTexture_spmhg")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_260it")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_260it")
 max_value = 1.0
 step = 0.01
 
-[node name="SFXLabel" type="Label" parent="SettingsMenu/HBoxContainer/Options"]
+[node name="SFXLabel" type="Label" parent="SettingsMenu/HBoxContainer/Options" unique_id=1124477508]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "SFX"
 
-[node name="SFXSlider" type="HSlider" parent="SettingsMenu/HBoxContainer/Options"]
+[node name="SFXSlider" type="HSlider" parent="SettingsMenu/HBoxContainer/Options" unique_id=114777074]
 layout_mode = 2
 focus_mode = 0
+theme_override_icons/grabber = ExtResource("2_vjs1s")
+theme_override_icons/grabber_highlight = ExtResource("2_vjs1s")
+theme_override_icons/grabber_disabled = ExtResource("2_vjs1s")
+theme_override_styles/slider = SubResource("StyleBoxTexture_spmhg")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_260it")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_260it")
 max_value = 1.0
 step = 0.01
 
-[node name="CheckButton" type="CheckButton" parent="SettingsMenu/HBoxContainer/Options"]
+[node name="CheckButton" type="CheckButton" parent="SettingsMenu/HBoxContainer/Options" unique_id=167145707]
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 60
+theme_override_icons/checked = SubResource("CompressedTexture2D_spmhg")
+theme_override_icons/unchecked = ExtResource("5_jutrf")
+theme_override_icons/checked_disabled = SubResource("CompressedTexture2D_spmhg")
+theme_override_icons/unchecked_disabled = ExtResource("5_jutrf")
 text = "FULLSCREEN"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="SettingsMenu/HBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="SettingsMenu/HBoxContainer" unique_id=1191744516]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/HBoxContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/HBoxContainer/ScrollContainer" unique_id=1882247701]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Credits" type="RichTextLabel" parent="SettingsMenu/HBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Credits" type="RichTextLabel" parent="SettingsMenu/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1157123980]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/bold_font_size = 70
 theme_override_font_sizes/bold_italics_font_size = 70
 theme_override_font_sizes/italics_font_size = 70
 theme_override_font_sizes/mono_font_size = 70
-theme_override_font_sizes/normal_font_size = 70
-theme_override_font_sizes/bold_font_size = 70
 text = "Credits:
 "
 
-[node name="Buttons" type="HBoxContainer" parent="SettingsMenu"]
+[node name="Buttons" type="HBoxContainer" parent="SettingsMenu" unique_id=2075930075]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Back" type="Button" parent="SettingsMenu/Buttons"]
+[node name="Back" type="Button" parent="SettingsMenu/Buttons" unique_id=1298837216]
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 75
 text = "BACK"
+flat = true
 
-[node name="HSeparator" type="Control" parent="SettingsMenu/Buttons"]
+[node name="HSeparator" type="Control" parent="SettingsMenu/Buttons" unique_id=1401073525]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="QuitButton" type="Button" parent="SettingsMenu/Buttons"]
+[node name="QuitButton" type="Button" parent="SettingsMenu/Buttons" unique_id=1568308055]
 visible = false
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 75
 text = "QUIT"
+flat = true
 
 [connection signal="value_changed" from="SettingsMenu/HBoxContainer/Options/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="SettingsMenu/HBoxContainer/Options/MusicSlider" to="." method="_on_music_slider_value_changed"]
