@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://d0dwe2bbpg4w"]
 
-[ext_resource type="Script" uid="uid://by1etgn0kcsnf" path="res://levels/room1/room_1.gd" id="1_w7pcf"]
+[ext_resource type="Script" uid="uid://by1etgn0kcsnf" path="res://levels/room1/room1.gd" id="1_w7pcf"]
 [ext_resource type="Texture2D" uid="uid://babv8c84ngway" path="res://levels/room1/sprites/room1.png" id="2_w7pcf"]
-[ext_resource type="PackedScene" uid="uid://c0gjg6cvalg8o" path="res://objects/receiver.tscn" id="3_66tix"]
-[ext_resource type="PackedScene" uid="uid://jmiepmoej4kg" path="res://objects/color_drag.tscn" id="4_a4g6i"]
-[ext_resource type="Texture2D" uid="uid://cnfsugdrjlcic" path="res://assets/moon.png" id="5_66tix"]
+[ext_resource type="Texture2D" uid="uid://cnfsugdrjlcic" path="res://levels/room1/sprites/moon.png" id="3_ifoym"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w7pcf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4g6k6"]
 size = Vector2(175.25, 188)
 
-[node name="Room1" type="Node2D" unique_id=1074964609]
+[node name="Room1" type="Node2D" unique_id=1074964609 node_paths=PackedStringArray("moon_area")]
 script = ExtResource("1_w7pcf")
+moon_area = NodePath("Moon/Area2D")
 metadata/_custom_type_script = "uid://524yva3w0xf3"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1059298015]
@@ -29,10 +30,16 @@ id = 3
 position = Vector2(38, -29)
 shape = SubResource("RectangleShape2D_4g6k6")
 
-[node name="Background1Color1" type="Sprite2D" parent="Moon" unique_id=1542750487]
-position = Vector2(37, -31)
-texture = ExtResource("5_66tix")
+[node name="Moon" type="Sprite2D" parent="." unique_id=1864886235]
+position = Vector2(724, -289)
+texture = ExtResource("3_ifoym")
 
-[connection signal="color_received" from="LightChecker" to="." method="color_received"]
+[node name="Area2D" type="Area2D" parent="Moon" unique_id=1546066210]
+position = Vector2(-39, 25)
+rotation = 1.0793737
+scale = Vector2(1.0993439, 1)
 
-[editable path="Moon"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moon/Area2D" unique_id=1725127671]
+shape = SubResource("RectangleShape2D_u8j72")
+
+[connection signal="area_entered" from="LightChecker" to="." method="_on_light_checker_area_entered"]
