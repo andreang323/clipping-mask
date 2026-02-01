@@ -17,7 +17,7 @@ void fragment() {
             vec2 offset = vec2(float(x), float(y));
             float dist = length(offset);
 
-            if (dist > max_distance) continue;
+            if (dist > max_distance || !(UV.x < max_distance || UV.y < max_distance || UV.x > TEXTURE_PIXEL_SIZE.x - max_distance || UV.y > TEXTURE_PIXEL_SIZE.y - max_distance) || COLOR.a == 0.0) continue;
 
             if (texture(TEXTURE, UV + offset * TEXTURE_PIXEL_SIZE).a > 0.0) {
                 closest_outline_distance = min(closest_outline_distance, dist);
