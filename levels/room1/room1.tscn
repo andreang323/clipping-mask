@@ -3,9 +3,15 @@
 [ext_resource type="Script" uid="uid://by1etgn0kcsnf" path="res://levels/room1/room_1.gd" id="1_w7pcf"]
 [ext_resource type="Texture2D" uid="uid://babv8c84ngway" path="res://levels/room1/sprites/room1.png" id="2_w7pcf"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_w7pcf"]
+
 [node name="Room1" type="Node2D" unique_id=1074964609]
 script = ExtResource("1_w7pcf")
 metadata/_custom_type_script = "uid://524yva3w0xf3"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1059298015]
+z_index = 1
+texture = ExtResource("2_w7pcf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2127007782]
 offset_left = -77.00001
@@ -15,5 +21,10 @@ offset_bottom = -498.00006
 scale = Vector2(24.799995, 13.56)
 color = Color(0, 0, 0, 1)
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1059298015]
-texture = ExtResource("2_w7pcf")
+[node name="TestLight" type="Area2D" parent="." unique_id=1607170855]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestLight" unique_id=223997157]
+position = Vector2(18, -120)
+shape = SubResource("CircleShape2D_w7pcf")
+
+[node name="Moon" type="Sprite2D" parent="." unique_id=1864886235]
