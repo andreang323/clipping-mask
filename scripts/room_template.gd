@@ -5,13 +5,12 @@ class_name Room
 @export var room_size : Vector2 = Vector2(1080, 1080)
 ## Emitted when room complete.
 signal room_complete()
-signal roomComplete()
 
 var complete = false
 
 ## Called when a room is completed.
-func roomFinished():
-	roomComplete.emit()
+func room_finished():
+	room_complete.emit()
 
 func color_received():
 	for receiver in get_tree().get_nodes_in_group("Receivers"):
