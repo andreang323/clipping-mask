@@ -135,13 +135,14 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 70
-theme_override_font_sizes/bold_font_size = 70
-theme_override_font_sizes/bold_italics_font_size = 70
-theme_override_font_sizes/italics_font_size = 70
-theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
 text = "Credits:
-"
+Cat sound: https://freesound.org/people/NoiseCollector/sounds/4914/
+Wing sound: https://freesound.org/people/ani_music/sounds/244977/"
 
 [node name="Buttons" type="HBoxContainer" parent="SettingsMenu" unique_id=2075930075]
 layout_mode = 2

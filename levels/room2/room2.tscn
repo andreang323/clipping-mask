@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://hgjouu5xi2jr"]
 
 [ext_resource type="Script" uid="uid://b78h4hr8doim6" path="res://levels/room2/room_2.gd" id="1_34xmr"]
+[ext_resource type="AudioStream" uid="uid://b1yjjqyg1isvw" path="res://assets/audio/cat.wav" id="2_6cuco"]
 [ext_resource type="Texture2D" uid="uid://dx8mtukalqti2" path="res://levels/room2/sprites/background.png" id="2_wqp6q"]
 [ext_resource type="Texture2D" uid="uid://htj01e8glk3y" path="res://levels/room2/sprites/000.png" id="4_m0jnv"]
 [ext_resource type="Texture2D" uid="uid://c5c5eefes8x3x" path="res://levels/room2/sprites/001.png" id="5_rumsy"]
@@ -92,7 +93,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_54nya"]
 resource_name = "sleep"
-length = 2.0
+length = 5.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -111,24 +112,24 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath(".:position")
 tracks/1/interp = 2
-tracks/1/loop_wrap = true
+tracks/1/loop_wrap = false
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.6666667, 1.4333333, 2.1999998, 3.0333333, 4.133333, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(286, 30), Vector2(286, 6), Vector2(286, 30), Vector2(286, 30)]
+"values": [Vector2(286, 30), Vector2(286, 12), Vector2(286, 30), Vector2(286, 30), Vector2(286, 12), Vector2(286, 30), Vector2(286, 30)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath(".:scale")
 tracks/2/interp = 2
-tracks/2/loop_wrap = true
+tracks/2/loop_wrap = false
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.6666667, 1.4333333, 2.1999998, 3.0333333, 4.133333, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.5400003), Vector2(0.5, 0.5), Vector2(0.5, 0.5)]
+"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.52), Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.5, 0.52), Vector2(0.5, 0.5), Vector2(0.5, 0.5)]
 }
 
 [sub_resource type="Animation" id="Animation_flh4e"]
@@ -196,6 +197,10 @@ other_receivers = [NodePath("Receiver7"), NodePath("Receiver6"), NodePath("Recei
 background = NodePath("Background")
 sound = NodePath("Marimba")
 metadata/_custom_type_script = "uid://524yva3w0xf3"
+
+[node name="CatSFX" type="AudioStreamPlayer" parent="." unique_id=935155367]
+stream = ExtResource("2_6cuco")
+bus = &"SFX"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=939994957]
 z_index = 1

@@ -21,6 +21,7 @@ func _on_area_entered(area: Area2D) -> void:
 			if snap_enabled:
 				var tween = get_tree().create_tween()
 				tween.tween_property(area, "global_position", global_position, 0.2)
+				$Snap.pitch_scale = 1
 				$Snap.play()
 				# Current answer = current overlapping
 				answer = area.id
@@ -32,6 +33,8 @@ func _on_area_entered(area: Area2D) -> void:
 					correct = false
 			# Snap disabled but we got the correct answer
 			elif area.id in answers:
+				$Snap.pitch_scale = 1.5
+				$Snap.play()
 				correct = true
 				color_received.emit(area.id)
 			# Otherwise we just don't care. cool.
