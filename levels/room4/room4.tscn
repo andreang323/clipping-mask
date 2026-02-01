@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dud5seoxkuo02"]
+
+[ext_resource type="Script" uid="uid://b2l1vlteo8sto" path="res://levels/room4/room_4.gd" id="1_o4caw"]
+[ext_resource type="Texture2D" uid="uid://cmemsda8ixiue" path="res://levels/room4/sprites/room_4.png" id="2_o4caw"]
+
+[node name="Room4" type="Node2D" unique_id=1049781343 node_paths=PackedStringArray("background")]
+script = ExtResource("1_o4caw")
+background = NodePath("Sprite2D")
+metadata/_custom_type_script = "uid://524yva3w0xf3"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1131614916]
+z_index = 1
+texture = ExtResource("2_o4caw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1066514037]
+offset_left = -238.0
+offset_top = -457.0
+offset_right = 210.0
+offset_bottom = -100.0
+mouse_filter = 2
+color = Color(0.69135684, 0.6913568, 0.69135684, 1)
