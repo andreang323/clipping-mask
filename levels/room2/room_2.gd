@@ -12,7 +12,10 @@ func _ready() -> void:
 func _on_correct_color_received() -> void:
     for receiver in needed_receivers:
         if receiver.correct == false: return
-    GlobalFlags.room2_data.cat_awakened = true
+    awaken_cat()
     for receiver in other_receivers:
         if receiver.correct == false: return
     GlobalFlags.room2_data.room_complete = true
+
+func awaken_cat() -> void:
+    GlobalFlags.room2_data.cat_awakened = true
