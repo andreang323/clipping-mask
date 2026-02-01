@@ -91,6 +91,12 @@ animations = [{
 "speed": 0.0
 }]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1m87u"]
+blend_mode = 3
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lrxaj"]
+blend_mode = 3
+
 [node name="MainMenu" type="Control" unique_id=2099778462]
 layout_mode = 3
 anchors_preset = 15
@@ -174,6 +180,53 @@ texture_disabled = ExtResource("8_lrxaj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TitleScreen/Container/Buttons/QuitButton" unique_id=1842011107]
 position = Vector2(159, 80)
 sprite_frames = SubResource("SpriteFrames_bsaje")
+
+[node name="ColorRect2" type="ColorRect" parent="TitleScreen" unique_id=904894012]
+anchors_preset = -1
+anchor_left = 0.04375
+anchor_top = 0.075
+anchor_right = 0.28125
+anchor_bottom = 0.912963
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TitleScreen" unique_id=538571608]
+offset_left = 1403.0
+offset_top = 277.0
+offset_right = 1863.0
+offset_bottom = 850.0
+theme_override_font_sizes/font_size = 50
+text = "How to play:
+Drag a color
+to objects
+missing color!
+A level is
+completed when
+all objects have
+a color."
+
+[node name="DraggableColor" type="ColorRect" parent="TitleScreen" unique_id=1298865877]
+material = SubResource("CanvasItemMaterial_1m87u")
+anchors_preset = -1
+anchor_left = 0.0625
+anchor_top = 0.11111111
+anchor_right = 0.153125
+anchor_bottom = 0.30277777
+color = Color(0, 1, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="DraggableColor2" type="ColorRect" parent="TitleScreen" unique_id=1167611810]
+material = SubResource("CanvasItemMaterial_lrxaj")
+anchors_preset = -1
+anchor_left = 0.0625
+anchor_top = 0.11111111
+anchor_right = 0.153125
+anchor_bottom = 0.30277777
+offset_left = 204.0
+offset_top = 231.0
+offset_right = 204.0
+offset_bottom = 231.0
+color = Color(0, 1, 1, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="SettingsScreen" parent="." unique_id=1249319436 instance=ExtResource("2_c784n")]
 visible = false
