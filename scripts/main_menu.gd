@@ -1,12 +1,29 @@
 extends Control
 
 var game_file = load("res://objects/main_scene.tscn")
+var current_game
 @export var start_button : TextureButton
 @export var settings_button : TextureButton
 @export var quit_button : TextureButton
 
 func _ready() -> void:
 	$SettingsScreen.hide()
+
+func resetGame():
+	# Fade out everything
+	$CanvasLayer.show()
+	$CanvasLayer/AnimationPlayer.play("fade")
+	await $CanvasLayer/AnimationPlayer.animation_finished
+	$TitleScreen.show()
+	$SettingsScreen.hide()
+	current_game.queue_free()
+	$SleepingIn.stop()
+	$MinimalistVibes.play()
+	GlobalFlags._ready()
+	# Fade in main menu
+	$CanvasLayer/AnimationPlayer.play_backwards("fade")
+	await $CanvasLayer/AnimationPlayer.animation_finished
+	$CanvasLayer.hide()
 
 ## Starts the game.
 func _on_start_button_pressed() -> void:
@@ -15,6 +32,8 @@ func _on_start_button_pressed() -> void:
 	$SettingsScreen.game_ready()
 	var game_start = game_file.instantiate()
 	add_child(game_start)
+	current_game = game_start
+	$CanvasLayer.show()
 	$CanvasLayer/AnimationPlayer.play("fade")
 	await $CanvasLayer/AnimationPlayer.animation_finished
 	$MinimalistVibes.stop()
