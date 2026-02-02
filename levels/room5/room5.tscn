@@ -189,6 +189,17 @@ snap_enabled = false
 stream = ExtResource("14_n33bk")
 bus = &"SFX"
 
+[node name="GameComplete" type="Label" parent="." unique_id=1615560486]
+z_index = 2
+offset_left = -871.0
+offset_top = -1582.0
+offset_right = 857.0
+offset_bottom = -1309.0
+theme_override_font_sizes/font_size = 125
+text = "Game Completed!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="room_complete" from="." to="." method="_on_room_complete"]
 
 [editable path="Color"]

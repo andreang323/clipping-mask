@@ -8,6 +8,7 @@ var current_game
 
 func _ready() -> void:
 	$SettingsScreen.hide()
+	GlobalFlags.reset_game.connect(resetGame)
 
 func resetGame():
 	# Fade out everything

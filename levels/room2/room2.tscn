@@ -373,7 +373,7 @@ position = Vector2(-42, -108)
 texture = ExtResource("17_b76fy")
 
 [node name="Potion15" parent="." unique_id=2086925595 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("6_4g868")]
-position = Vector2(820, 260)
+position = Vector2(784, 262)
 particle_color = Color(0.40392157, 0.31764707, 0.89411765, 1)
 particle_type = 1
 id = 12
