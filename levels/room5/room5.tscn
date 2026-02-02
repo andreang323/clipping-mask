@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://c0gjg6cvalg8o" path="res://objects/receiver.tscn" id="13_nrcuk"]
 [ext_resource type="AudioStream" uid="uid://bx0iu4jk8v6ay" path="res://assets/audio/marimba.mp3" id="14_n33bk"]
 [ext_resource type="Texture2D" uid="uid://dfbi4tlhakd3b" path="res://levels/room4/sprites/bird_flying.png" id="15_biei5"]
-[ext_resource type="FontFile" uid="uid://dqqok7yhwvif4" path="res://assets/Anak Paud.ttf" id="15_kworl"]
 [ext_resource type="AudioStream" uid="uid://c76xlqer1awxm" path="res://assets/audio/wingbeat.mp3" id="16_kworl"]
 
 [sub_resource type="Animation" id="Animation_5ptq8"]
@@ -67,6 +66,58 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_biei5"]
+resource_name = "credits"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1334, -1396), Vector2(657, -1155), Vector2(-8, -1071), Vector2(-1025.048, -1155), Vector2(-1345, -1231)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:a")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.5491219, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Wingbeat:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_7beuu"]
@@ -123,6 +174,7 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ckk37"]
 _data = {
 &"RESET": SubResource("Animation_5ptq8"),
+&"credits": SubResource("Animation_biei5"),
 &"escape": SubResource("Animation_7beuu")
 }
 
@@ -307,8 +359,7 @@ offset_left = -871.0
 offset_top = -1582.0
 offset_right = 857.0
 offset_bottom = -1309.0
-theme_override_fonts/font = ExtResource("15_kworl")
-theme_override_font_sizes/font_size = 129
+theme_override_font_sizes/font_size = 125
 text = "Game Completed!"
 horizontal_alignment = 1
 vertical_alignment = 1
