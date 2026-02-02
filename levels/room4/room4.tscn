@@ -392,7 +392,6 @@ bus = &"SFX"
 libraries/ = SubResource("AnimationLibrary_uckq8")
 
 [node name="CatAnim" type="Node2D" parent="." unique_id=1475889221]
-visible = false
 z_index = 4096
 position = Vector2(-247, -160)
 
@@ -412,6 +411,7 @@ libraries/ = SubResource("AnimationLibrary_p3u2w")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1808669986]
 
 [node name="Color" parent="." unique_id=1426723397 groups=["Colors"] instance=ExtResource("9_jpdwt")]
+visible = false
 position = Vector2(152, -81)
 particle_color = Color(0.21176471, 0.4745098, 0.8235294, 1)
 id = 4
@@ -420,6 +420,7 @@ id = 4
 texture = ExtResource("10_8rpem")
 
 [node name="Color2" parent="." unique_id=1394284978 groups=["Colors"] instance=ExtResource("9_jpdwt")]
+visible = false
 position = Vector2(189, -254)
 particle_color = Color(0.9254902, 0.19607843, 0.14509805, 1)
 id = 1
@@ -428,6 +429,7 @@ id = 1
 texture = ExtResource("11_qd2jd")
 
 [node name="Color3" parent="." unique_id=1081469217 groups=["Colors"] instance=ExtResource("9_jpdwt")]
+visible = false
 position = Vector2(163, -297)
 particle_color = Color(1, 1, 1, 1)
 id = 15
@@ -439,6 +441,7 @@ position = Vector2(17, -13)
 texture = ExtResource("12_iw6is")
 
 [node name="Color4" parent="." unique_id=1100091402 groups=["Colors"] instance=ExtResource("9_jpdwt")]
+visible = false
 position = Vector2(183, -124)
 particle_color = Color(0.98039216, 0.8745098, 0.2901961, 1)
 id = 3
@@ -447,6 +450,7 @@ id = 3
 texture = ExtResource("13_elipq")
 
 [node name="ColorKey" parent="." unique_id=2035628437 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("9_jpdwt")]
+visible = false
 position = Vector2(247, -85)
 particle_color = Color(0.98039216, 0.8745098, 0.2901961, 1)
 id = 22

@@ -1,5 +1,10 @@
 extends Room
 
 func credits():
+	print("blah")
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position:y", -1440, 1)
+	tween.tween_property(GlobalFlags.camera, "position", Vector2(GlobalFlags.camera.position.x, GlobalFlags.camera.position.y-960), 1)
+
+
+func _on_room_complete() -> void:
+	credits()
