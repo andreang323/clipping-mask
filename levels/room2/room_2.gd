@@ -24,3 +24,7 @@ func awaken_cat() -> void:
 	GlobalFlags.room2_data.cat_awakened = true
 	$CatSFX.play()
 	cat_animation_player.play("spooked")
+
+
+func _on_room_complete() -> void:
+	GlobalFlags.room2_data.room_complete = true

@@ -49,8 +49,10 @@ func _on_bird_complete(_color) -> void:
 
 		if key_free:
 			$Sprite2D.texture = free_bird_texture
+			GlobalFlags.room1_data.room_complete = true
 		else:
 			$Sprite2D.texture = free_bird_yes_key_texture
+		GlobalFlags.room4_data.bird_freed = true
 
 func _on_receiver_key_color_received(_color: Receiver.COLORTYPES) -> void:
 	if !key_free:
@@ -64,6 +66,6 @@ func _on_receiver_key_color_received(_color: Receiver.COLORTYPES) -> void:
 
 		if bird_free:
 			$Sprite2D.texture = free_bird_texture
+			GlobalFlags.room1_data.room_complete = true
 		else:
 			$Sprite2D.texture = free_key_texture
-		

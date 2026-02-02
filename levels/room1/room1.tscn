@@ -119,6 +119,7 @@ shape = SubResource("RectangleShape2D_tsbat")
 stream = ExtResource("10_tsbat")
 bus = &"SFX"
 
+[connection signal="room_complete" from="." to="." method="_on_room_complete"]
 [connection signal="color_received" from="LightChecker" to="." method="_on_light_checker_color_received"]
 [connection signal="color_received" from="GemChecker" to="." method="_on_gem_checker_color_received"]
 [connection signal="area_entered" from="Key" to="Key" method="_on_area_entered"]

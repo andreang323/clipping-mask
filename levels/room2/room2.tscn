@@ -493,6 +493,8 @@ animation = &"sleep"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cat" unique_id=687093786]
 libraries/ = SubResource("AnimationLibrary_205kr")
 
+[connection signal="room_complete" from="." to="." method="_on_room_complete"]
+
 [editable path="Potion9"]
 [editable path="Potion10"]
 [editable path="Potion11"]
