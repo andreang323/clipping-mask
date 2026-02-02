@@ -20,3 +20,6 @@ func _ready():
 	room3_data = Room3Data.new()
 	room4_data = Room4Data.new()
 	room5_data = Room5Data.new()
+
+func _process(_delta) -> void:
+	print(room4_data.bird_freed)

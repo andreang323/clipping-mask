@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ypxqf8jr076s" path="res://levels/room5/room_5.gd" id="1_2wmum"]
 [ext_resource type="Texture2D" uid="uid://bdrpbeetfrky0" path="res://levels/room5/sprites/room_5.png" id="2_mws08"]
+[ext_resource type="Texture2D" uid="uid://b8mxfrojcaehp" path="res://levels/room5/sprites/room_5_rainbow.png" id="3_kworl"]
 [ext_resource type="PackedScene" uid="uid://jmiepmoej4kg" path="res://objects/color_drag.tscn" id="3_q5jur"]
 [ext_resource type="Texture2D" uid="uid://bw0x4mc38msg6" path="res://levels/room5/sprites/000.png" id="4_n33bk"]
 [ext_resource type="Texture2D" uid="uid://c64qhpsfw3ay7" path="res://levels/room5/sprites/001.png" id="5_xmn7j"]
@@ -15,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c0gjg6cvalg8o" path="res://objects/receiver.tscn" id="13_nrcuk"]
 [ext_resource type="AudioStream" uid="uid://bx0iu4jk8v6ay" path="res://assets/audio/marimba.mp3" id="14_n33bk"]
 [ext_resource type="Texture2D" uid="uid://dfbi4tlhakd3b" path="res://levels/room4/sprites/bird_flying.png" id="15_biei5"]
+[ext_resource type="FontFile" uid="uid://dqqok7yhwvif4" path="res://assets/Anak Paud.ttf" id="16_ckk37"]
 [ext_resource type="AudioStream" uid="uid://c76xlqer1awxm" path="res://assets/audio/wingbeat.mp3" id="16_kworl"]
 
 [sub_resource type="Animation" id="Animation_5ptq8"]
@@ -186,7 +188,7 @@ sound = NodePath("Marimba")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1999614817]
 z_index = 1
-texture = ExtResource("2_mws08")
+texture = ExtResource("3_kworl")
 offset = Vector2(0, -480)
 
 [node name="Color" parent="." unique_id=1426723397 node_paths=PackedStringArray("sprite") groups=["Colors"] instance=ExtResource("3_q5jur")]
@@ -359,6 +361,7 @@ offset_left = -871.0
 offset_top = -1582.0
 offset_right = 857.0
 offset_bottom = -1309.0
+theme_override_fonts/font = ExtResource("16_ckk37")
 theme_override_font_sizes/font_size = 125
 text = "Game Completed!"
 horizontal_alignment = 1

@@ -10,7 +10,7 @@ func credits():
 	tween.tween_property(GlobalFlags.camera, "position", Vector2(GlobalFlags.camera.position.x, GlobalFlags.camera.position.y-960), 1)
 	await tween.finished
 	if GlobalFlags.room4_data.bird_freed:
-		$BirdFlying/AnimationPlayer.play("credit")
+		$BirdFlying/AnimationPlayer.play("escape")
 	credits_roll = true
 
 func _input(event: InputEvent) -> void:
