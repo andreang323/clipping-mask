@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Clipping Mask"
-run/main_scene="uid://xft1sx3nrh3p"
+run/main_scene="uid://urj1hrp1j7j"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
