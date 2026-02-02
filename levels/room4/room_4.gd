@@ -21,13 +21,14 @@ func enter_room(room_id_transition: int) -> void:
 		if GlobalFlags.room4_data.cat_anim_played:
 			return
 		if GlobalFlags.room2_data.cat_awakened:
+			for color in colors:
+				color.visible = true
+			$CatAnim/AnimationPlayer.play("cat_fall_reset")
 			await get_tree().create_timer(.5).timeout
 			$CatFallSFX.play()
 			$CatAnim/Cover.visible = false
 			$CatAnim/CatCloth.visible = true
 			$CatAnim/AnimationPlayer.play("cat_fall")
-			for color in colors:
-				color.visible = true
 			GlobalFlags.room4_data.cat_anim_played = true
 
 func _on_bird_complete(_color) -> void:
