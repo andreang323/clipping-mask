@@ -6,10 +6,13 @@ var room3_data: Room3Data
 var room4_data: Room4Data
 var room5_data: Room5Data
 
+var camera: Camera2D
+
 signal key_obtained()
 signal go_to_final_level()
 signal cat_awakened()
 signal enter_room(room_id: int)
+signal return_to_menu
 
 func _ready():
     room1_data = Room1Data.new()

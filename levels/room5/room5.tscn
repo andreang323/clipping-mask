@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c24s1olxq2aux"]
+[gd_scene format=3 uid="uid://ddl5b27g6rkmk"]
 
 [ext_resource type="Script" uid="uid://ypxqf8jr076s" path="res://levels/room5/room_5.gd" id="1_2wmum"]
 [ext_resource type="Texture2D" uid="uid://bdrpbeetfrky0" path="res://levels/room5/sprites/room_5.png" id="2_mws08"]
@@ -188,6 +188,8 @@ snap_enabled = false
 [node name="Marimba" type="AudioStreamPlayer" parent="." unique_id=2051036475]
 stream = ExtResource("14_n33bk")
 bus = &"SFX"
+
+[connection signal="room_complete" from="." to="." method="_on_room_complete"]
 
 [editable path="Color"]
 [editable path="Color2"]

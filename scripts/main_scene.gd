@@ -19,6 +19,8 @@ func _ready() -> void:
 
 	var room_id: int = 0
 
+	GlobalFlags.camera = $Camera2D
+
 	# Autopopulate rooms.
 	if autopopulate:
 		var current_location = base_location
@@ -123,12 +125,15 @@ func load_final_level() -> void:
 	await tween.finished
 
 	var saved_position = all_rooms[current_room_index].position
-	all_rooms[current_room_index].queue_free()
+	for room in all_rooms:
+		room.queue_free()
 
 	var new_room = final_room.instantiate()
-	add_child(new_room)
+	$Rooms.add_child(new_room)
 	new_room.position = saved_position
 
 	new_room.modulate = Color(0, 0, 0)
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(new_room, "modulate", Color(1, 1, 1), 0.5)
+
+	rooms = [new_room]
