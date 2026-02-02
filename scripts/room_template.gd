@@ -24,10 +24,10 @@ func room_finished():
 
 func color_received(_id):
 	for receiver in get_tree().get_nodes_in_group("Receivers"):
-		if !receiver.correct:
+		if is_ancestor_of(receiver) and !receiver.correct:
 			return
 	for color_drag in get_tree().get_nodes_in_group("Colors"):
-		if color_drag is ColorDrag:
+		if is_ancestor_of(color_drag) and color_drag is ColorDrag:
 			color_drag.disable()
 	complete = true
 	if sound:

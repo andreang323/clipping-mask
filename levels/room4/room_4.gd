@@ -37,10 +37,12 @@ func _on_bird_complete(_color) -> void:
 			if !receiver.correct:
 				return
 		
-		for colordrag in get_tree().get_nodes_in_group("Colors"):
-			if colordrag.name != "ColorKey":
-				colordrag.hide()
-				
+		
+		$Color.hide()
+		$Color2.hide()
+		$Color3.hide()
+		$Color4.hide()
+		
 		bird_free = true
 		$BirdFlying.visible = true
 		$BirdFlying/AnimationPlayer.play("escape")
