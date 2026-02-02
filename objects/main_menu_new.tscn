@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://c32u13jm8lte2" path="res://scripts/draggable.gd" id="18_ghhmh"]
 [ext_resource type="PackedScene" uid="uid://vv1kw068vm8x" path="res://objects/settings_screen.tscn" id="19_eh1i1"]
 [ext_resource type="Texture2D" uid="uid://c2v4a3jnf7l2f" path="res://assets/titlescreen_assets/title_screen_painting/painting_space.png" id="19_hwk18"]
+[ext_resource type="FontFile" uid="uid://dqqok7yhwvif4" path="res://assets/Anak Paud.ttf" id="20_h5iq3"]
 [ext_resource type="Texture2D" uid="uid://dk080kppjc8db" path="res://assets/titlescreen_assets/title_screen_painting/000.png" id="20_qcrxl"]
 [ext_resource type="Texture2D" uid="uid://b8h1tsvmtulik" path="res://assets/titlescreen_assets/title_screen_painting/001.png" id="22_x0tpj"]
 [ext_resource type="Texture2D" uid="uid://cxas4y6xch8l2" path="res://assets/titlescreen_assets/title_screen_painting/002.png" id="23_w0ucp"]
@@ -286,11 +287,12 @@ texture = ExtResource("19_hwk18")
 stretch_mode = 2
 
 [node name="Label" type="Label" parent="TitleScreen/SubViewportContainer/SubViewport" unique_id=1490546659]
-offset_left = 1541.0
-offset_top = 170.0
-offset_right = 2001.0
-offset_bottom = 743.0
-theme_override_font_sizes/font_size = 45
+offset_left = 1503.0
+offset_top = 212.0
+offset_right = 1963.0
+offset_bottom = 785.0
+theme_override_fonts/font = ExtResource("20_h5iq3")
+theme_override_font_sizes/font_size = 50
 text = "How to play:
 Drag a color
 to objects
