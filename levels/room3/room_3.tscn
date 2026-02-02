@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://wtxhl7nbanbo"]
+[gd_scene format=3 uid="uid://b4icdxywu2spj"]
 
-[ext_resource type="Script" uid="uid://bwpw31032fqf0" path="res://levels/room3/room_3.gd" id="1_mn4nl"]
+[ext_resource type="Script" path="res://levels/room3/room_3.gd" id="1_mn4nl"]
 [ext_resource type="Texture2D" uid="uid://dig5ykwh3trsn" path="res://levels/room3/sprites/room_3.png" id="2_a4cwi"]
 [ext_resource type="PackedScene" uid="uid://jmiepmoej4kg" path="res://objects/color_drag.tscn" id="3_xnabr"]
 [ext_resource type="Texture2D" uid="uid://wvwlwfj6caeq" path="res://levels/room3/sprites/000.png" id="4_kumdb"]
