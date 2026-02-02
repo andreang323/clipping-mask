@@ -12,6 +12,7 @@ signal key_obtained()
 signal go_to_final_level()
 signal cat_awakened()
 signal enter_room(room_id: int)
+signal reset_game
 
 func _ready():
 	room1_data = Room1Data.new()
